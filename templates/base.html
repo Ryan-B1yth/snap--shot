@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     {% block css %}
     {% endblock %}
@@ -19,30 +19,37 @@
             <h1>SnapShot</h1>
         </div>
         <nav class="main-nav">
-            {% if user.is_authenticated %}
-                {% if user.is_superuser %}
-                    <a href="#">Site management</a>
-                {% endif %}
-                <a href="#">Profile</a>
-                <a href="{% url 'account_logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'account_login' %}">Login</a>
-                <a href="{% url 'account_signup' %}">Register</a>
-            {% endif %}
-
-            <form action="" method="GET">
-                <input type="search" name="q" id="" placeholder="Search...">
-            </form>
-
-            <div class="basket">
-                <p>
-                    {% if grand_total %}
-                        £{{ grand_total|floatformat:2 }}
-                    {% else %}
-                        £0.00
+            <ul>
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                        <li><a href="#">Site management</a></li>
                     {% endif %}
-                </p>
-            </div>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                    <li><a href="{% url 'account_login' %}">Login</a></li>
+                    <li><a href="{% url 'account_signup' %}">Register</a></li>
+                {% endif %}
+
+                <li>
+                    <form action="" method="GET">
+                        <input type="search" name="q" id="" placeholder="Search...">
+                    </form>
+                </li>
+
+                <li>
+                    <div class="basket">
+                        <p>
+                            {% if grand_total %}
+                                £{{ grand_total|floatformat:2 }}
+                            {% else %}
+                                £0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </li>
+            </ul>
         </nav>
     </header>
 
