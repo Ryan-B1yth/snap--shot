@@ -11,6 +11,9 @@ class Category(models.Model):
     def __str__(self):
         return str(self.friendly_name)
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
 
 class Product(models.Model):
     """ Product model """
