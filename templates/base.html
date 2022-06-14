@@ -27,7 +27,6 @@
                     <li><a href="#">Profile</a></li>
                     <li><a href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
                     <li><a href="{% url 'account_login' %}">Login</a></li>
                     <li><a href="{% url 'account_signup' %}">Register</a></li>
                 {% endif %}
@@ -51,6 +50,22 @@
                 </li>
             </ul>
         </nav>
+        <div class="categories dropdown">
+            <p>Filter</p>
+            <ul>
+                <li>By price</li>
+                <li>By rating</li>
+                <li>By category</li>
+                <li>All items</li>
+            </ul>
+        </div>
+        <div class="offers dropdown">
+            <p>Offers</p>
+            <ul>
+                <li>New</li>
+                <li>Sale</li>
+            </ul>
+        </div>
     </header>
 
     {% block content %}
