@@ -19,7 +19,7 @@
             <div class="item-info">
                 <h3 class="item-name">{{ product.name }}</h3>
                 <h4 class="item-price">£{{ product.price }}</h4>
-                <div class="see-more"><a href="#">See more</a></div>
+                <div class="see-more"><a href="{% url 'product_detail' product.id %}">See more</a></div>
             </div>
         </div>
     {% endfor %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+
+{% endblock %}
+
+{% block title %} | {{ product.name }}{% endblock %}
+
+{% block content %}
+
+    <div class="items-body-img"></div>
+    <div class="items-main">
+        <div class="item-images">
+            <div class="main-img">
+                <img src="{{ product.image_url }}" alt="">
+            </div>
+            <div class="extra-images">
+                <div class="img-s"></div>
+                <div class="img-s"></div>
+                <div class="img-s"></div>
+                <div class="img-s"></div>
+                <div class="img-s"></div>
+                <div class="img-s"></div>
+            </div>
+        </div>
+        <div class="item-information">
+            <h1 class="item-title">{{ product.name }}</h1>
+            <div class="item-description">{{ product.description }}</div>
+            <p>£{{ product.price }}</p>
+            <button class="add-to-cart">Add to cart</button>
+        </div>
+        <div class="item-extra-info">Extra stuff</div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}
