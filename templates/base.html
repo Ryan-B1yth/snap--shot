@@ -32,7 +32,7 @@
                 {% endif %}
 
                 <li>
-                    <form action="" method="GET">
+                    <form action="{% url 'products' %}" method="GET">
                         <input type="search" name="q" id="" placeholder="Search...">
                     </form>
                 </li>
@@ -50,13 +50,19 @@
                 </li>
             </ul>
         </nav>
-        <div class="categories dropdown">
+        <div class="filter dropdown">
             <p>Filter</p>
             <ul>
                 <li>By price</li>
                 <li>By rating</li>
-                <li>By category</li>
                 <li><a href="{% url 'products' %}">All items</a></li>
+            </ul>
+        </div>
+        <div class="categories dropdown">
+            <p>Categories</p>
+            <ul>
+                <li><a href="{% url 'products'%}?category=physical">Physical</a></li>
+                <li><a href="{% url 'products'%}?category=digital">Digital</a></li>
             </ul>
         </div>
         <div class="offers dropdown">
