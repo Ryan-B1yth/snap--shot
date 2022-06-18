@@ -96,4 +96,8 @@
     transition: all 400ms ease;
 }
 
+.category-tag {
+    font-size: .75rem;
+}
+
 /* End items */

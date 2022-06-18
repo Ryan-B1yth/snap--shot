@@ -17,14 +17,6 @@
             <div class="main-img">
                 <img src="{{ product.image_url }}" alt="">
             </div>
-            <div class="extra-images">
-                <div class="img-s"></div>
-                <div class="img-s"></div>
-                <div class="img-s"></div>
-                <div class="img-s"></div>
-                <div class="img-s"></div>
-                <div class="img-s"></div>
-            </div>
         </div>
         <div class="item-information">
             <h1 class="item-title">{{ product.name }}</h1>
@@ -32,7 +24,9 @@
             <p>£{{ product.price }}</p>
             <button class="add-to-cart">Add to cart</button>
         </div>
-        <div class="item-extra-info">Extra stuff</div>
+        <div class="item-extra-info">
+            <h4>Others in this category - <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></h4>
+        </div>
     </div>
 
 {% endblock %}

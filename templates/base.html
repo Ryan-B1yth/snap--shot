@@ -53,8 +53,8 @@
         <div class="filter dropdown">
             <p>Filter</p>
             <ul>
-                <li>By price</li>
-                <li>By rating</li>
+                <li><a href="{% url 'products' %}?sort=price&direction=asc">By price</a></li>
+                <li><a href="{% url 'products' %}?sort=rating&direction=desc">By rating</a></li>
                 <li><a href="{% url 'products' %}">All items</a></li>
             </ul>
         </div>
