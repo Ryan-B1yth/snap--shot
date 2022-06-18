@@ -6,6 +6,7 @@
     list-style-type: none;
     font-family: Barlow, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #000000;
+    position: relative;
 }
 
 .main-nav {
@@ -42,4 +43,10 @@ p {
     justify-content: center;
     align-items: center;
     gap: 1em;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
 }

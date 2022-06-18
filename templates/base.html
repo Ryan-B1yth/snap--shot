@@ -78,8 +78,14 @@
     {% block content %}
     {% endblock %}
 
+    <div id="back-to-top">
+        <button>Back to top</button>
+    </div>
+
     {% block js %}
     {% endblock %}
+
+    <script src="{% static 'js/base.js' %}"></script>
 
 </body>
 </html>
