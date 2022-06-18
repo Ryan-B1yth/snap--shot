@@ -10,6 +10,16 @@
 {% block title %} | Products{% endblock %}
 
 {% block content %}
+    <h3 class="center">{{ products|length }} products {% if search_term %} found in {{ search_term }}{% endif %}</h3>
+    <select id="sort-selector" class="">
+        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+    </select>
 
     {% for product in products %}
         <div class="item-p">
@@ -29,4 +39,7 @@
 {% endblock %}
 
 {% block js %}
+
+    <script src="{% static 'js/products.js' %}"></script>
+
 {% endblock %}
