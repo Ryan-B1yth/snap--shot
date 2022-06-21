@@ -40,13 +40,15 @@
 
                 <li>
                     <div class="basket">
-                        <p>
-                            {% if grand_total %}
-                                £{{ grand_total|floatformat:2 }}
-                            {% else %}
-                                £0.00
-                            {% endif %}
-                        </p>
+                        <a href="{% url 'basket' %}">
+                            <p>
+                                {% if grand_total %}
+                                    £{{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    £0.00
+                                {% endif %}
+                            </p>
+                        </a>
                     </div>
                 </li>
             </ul>

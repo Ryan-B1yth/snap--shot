@@ -1,0 +1,29 @@
+.grid-item-row {
+    display: grid;
+    width: 55%;
+    grid-auto-flow: column;
+    height: 50px;
+}
+
+.grid-item-row * {
+    border: 1px solid black;
+}
+
+.item-image {
+    grid-column: span 1;
+}
+
+.item-name {
+    grid-column: span 2;
+    
+}
+
+.item-quantity {
+    grid-column: span 1;
+    
+}
+
+.total-price {
+    grid-column: span 1;
+    
+}
