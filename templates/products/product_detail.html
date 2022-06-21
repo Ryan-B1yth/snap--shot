@@ -22,7 +22,14 @@
             <h1 class="item-title">{{ product.name }}</h1>
             <div class="item-description">{{ product.description }}</div>
             <p>£{{ product.price }}</p>
-            <button class="add-to-cart">Add to cart</button>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input class="add-to-cart" type="submit" value="Add to cart">
+            </form>
+            <div class="keep-shopping"><a href="{% url 'home' %}">Keep shopping</a></div>
+
+
         </div>
         <div class="item-extra-info">
             <h4>Others in this category - <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></h4>
