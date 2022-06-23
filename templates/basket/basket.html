@@ -11,20 +11,13 @@
 
 {% block content %}
 
-    <div class="grid-item-row">
-        <div class="item-image">
-
-        </div>
-        <div class="item-name">
-
-        </div>
-        <div class="item-quantity">
-
-        </div>
-        <div class="total-price">
-
-        </div>
-    </div>
+    {% if basket_items %}
+        {{ basket_items }}
+    {% else %}
+        <p>You haven't added anything yet!</p>
+        <button><a href="{% url 'products' %}">Go shopping!</a></button>
+    {% endif %}
+    
     <div class="receipt"></div>
 
 {% endblock %}
