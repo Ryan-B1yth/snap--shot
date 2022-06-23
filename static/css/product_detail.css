@@ -93,15 +93,6 @@
     padding: 2em;
 }
 
-.add-to-basket, .keep-shopping {
-    margin: 0 0 0 auto;
-    padding: .75em 2em;
-    border: none;
-    border-radius: 2px;
-    background-color: #efefef;
-    cursor: pointer;
-}
-
 .item-extra-info {
     width: 100%;
     height: 100px;

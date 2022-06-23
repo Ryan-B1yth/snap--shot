@@ -1,29 +1,56 @@
+.basket-body {
+    display: flex;
+}
+
+.item-list {
+    flex: 1;
+    height: auto;
+}
+
 .grid-item-row {
-    display: grid;
-    width: 55%;
+    display: flex;
+    width: 100%;
     grid-auto-flow: column;
-    height: 50px;
+    height: 100px;
+    align-items: center;
 }
 
 .grid-item-row * {
-    border: 1px solid black;
+    text-align: center;
 }
 
-.item-image {
-    grid-column: span 1;
+.item-image, .total-price, .item-quantity {
+    flex: 1;
 }
 
 .item-name {
-    grid-column: span 2;
-    
+    flex: 2;
 }
 
-.item-quantity {
-    grid-column: span 1;
-    
+.receipt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.total-price {
-    grid-column: span 1;
-    
+.receipt-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 90%;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #f6e3ba80;
+}
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
 }

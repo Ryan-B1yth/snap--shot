@@ -16,12 +16,11 @@ def basket_contents(request):
         product = get_object_or_404(Product, pk=product_id)
         total += quantity * product.price
         product_count += quantity
-        basket_items.append( {
+        basket_items.append({
             'product_id': product_id,
             'quantity': quantity,
             'product': product,
         })
-
 
     if total < settings.STANDARD_DELIVERY_PERCENTAGE:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
