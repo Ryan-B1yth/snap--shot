@@ -21,6 +21,11 @@
                         <div class="item-name">
                             {{ item.product.name }}
                         </div>
+                        {% if product.size %}
+                        <div class="item-name">
+                            {{ item.product.size }}
+                        </div>
+                        {% endif %}
                         <div class="item-quantity">
                             {{ item.quantity }}
                         </div>
@@ -38,8 +43,9 @@
         
         <div class="receipt">
             <div class="receipt-content">
-                <p>Total: £{{ grand_total }}</p>
+                <p>Basket: £{{ total|floatformat:2 }}</p>
                 <p>Delivery: £{{ delivery|floatformat:2 }}</p>
+                <p>Total: £{{ grand_total|floatformat:2 }}</p>
             </div>
             <div class="call-to-action">
                 <button class="btn"><a href="{% url 'products' %}">Keep shopping</a></button>
