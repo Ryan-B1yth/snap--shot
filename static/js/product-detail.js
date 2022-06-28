@@ -1,7 +1,10 @@
 $('#increment').click( function(e) {
     e.preventDefault()
     var value = parseInt($('#quantity').val())
-    $('#quantity').val(value + 1)
+
+    isNaN(value) || value >= 99 ? 
+        $('#quantity').val(99) : 
+        $('#quantity').val(value + 1)
 })
 
 $('#decrement').click( function(e) {

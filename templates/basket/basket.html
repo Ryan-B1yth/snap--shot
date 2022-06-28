@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load basket_tools %}
 
 {% block css %}
 
@@ -19,18 +20,26 @@
                             <img src="{{ item.product.image_url }}" alt="">
                         </div>
                         <div class="item-name">
-                            {{ item.product.name }}
+                            {{ item.product.name }}{% if item.size %}: {{ item.size }}{% endif %}
                         </div>
-                        {% if product.size %}
-                        <div class="item-name">
-                            {{ item.product.size }}
-                        </div>
-                        {% endif %}
                         <div class="item-quantity">
-                            {{ item.quantity }}
+                            <form class="update-form" action="{% url 'update_basket' item.item_id %}" method="POST">
+                                {% csrf_token %}
+                                <div class="quantity-change">
+                                    <div class="decrement" id="decrement"><button class="btn">-</button></div>
+                                    <input id="quantity" class="btn" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    <div class="increment" id="increment"><button class="btn">+</button></div>
+                                </div>
+                                {% if item.product.size %}
+                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                {% endif %}
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </form>
+                            <a class="update-link"><small>Update</small></a>
+                            <a class="remove-item" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                         </div>
                         <div class="total-price">
-                            {{ item.product.price }}
+                            {{ item.product.price | calc_subtotal:item.quantity }}
                         </div>
                     </div>
                 {% endfor %}
@@ -56,4 +65,23 @@
 {% endblock %}
 
 {% block js %}
+
+    <script src="{% static 'js/product-detail.js'%}"></script>
+    <script src="{% static 'js/basket.js'%}"></script>
+    <!-- In HTML so CSRF token works -->
+    <script>
+        $('.remove-item').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var size = $(this).data('product_size');
+            var url = `/basket/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+            $.post(url, data)
+            .done(function() {
+                location.reload();
+            });
+        })
+    </script>
+
 {% endblock %}
