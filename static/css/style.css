@@ -63,3 +63,12 @@ p {
     background-color: #efefef;
     cursor: pointer;
 }
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    border: 2px solid black;
+    background-color: #FFFFFF;
+}
