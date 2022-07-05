@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load basket_tools %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/basket.css' %}">
+
+{% endblock %}
+
+{% block title %} | Basket{% endblock %}
+
+{% block content %}
+    <h2>Please complete the form...</h2>
+    <div class="call-to-action">
+        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            {% csrf_token %}
+            {{ order_form }}
+
+            {% if user.is_authenticated %}
+                <label for="save-location">Save address for future purchases</label>
+                <input type="checkbox" name="save-location" id="save-location" checked>
+            {% else %}
+                <button class="btn"><a href="{% url 'account_login' %}">Login</a></button>
+                <button class="btn"><a href="{% url 'account_signup' %}">Create an account</a></button>
+            {% endif %}
+
+            <section class="stripe-payment">
+                <div id="card-element"></div>
+                <div id="card-errors" role="alert"></div>
+            </section>
+
+            <button id="submit-button">Complete order</button>
+        </form>
+    </div>
+    <div class="order-summary">
+        <p>Order summary ({{ product_count }})</p>
+            {% if basket_items %}
+                <div class="item-list">
+                    {% for item in basket_items %}
+                        <div class="grid-item-row">
+                            <div class="item-image">
+                                <img src="{{ item.product.image_url }}" alt="">
+                            </div>
+                            <div class="item-name">
+                                {{ item.product.name }}{% if item.size %}: {{ item.size }}{% endif %}
+                            </div>
+                            <div class="item-quantity">
+                                <div class="quantity-change">
+                                    
+                                    <p id="quantity" class="">{{ item.quantity }}</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="total-price">
+                                {{ item.product.price | calc_subtotal:item.quantity }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <p>Total: {{ total|floatformat:2 }}</p>
+                    <p>Delivery: {{ delivery|floatformat:2 }}</p>
+                    <p>Grand total: {{ grand_total|floatformat:2 }}</p>
+                </div>
+            {% endif %}
+    </div>
+    <button class="btn"><a href="{% url 'products' %}">Keep shopping</a></button>
+{% endblock %}
+
+
+{% block js %}
+
+{% endblock %}
