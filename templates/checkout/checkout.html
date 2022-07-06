@@ -5,6 +5,7 @@
 {% block css %}
 
     <link rel="stylesheet" href="{% static 'css/basket.css' %}">
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 
 {% endblock %}
 
@@ -65,6 +66,9 @@
             {% endif %}
     </div>
     <button class="btn"><a href="{% url 'products' %}">Keep shopping</a></button>
+    <div id="loading-overlay">
+
+    </div>
 {% endblock %}
 
 
