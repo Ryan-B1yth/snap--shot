@@ -42,12 +42,12 @@ form.addEventListener('submit', function(ev) {
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
 
-    var saveInfo = Boolean($('#save-location').attr('checked'));
+    var saveInfo = Boolean($('#save_location').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
-        'save-location': saveInfo,
+        'save_location': saveInfo,
     };
     var url = '/checkout/cache/';
 

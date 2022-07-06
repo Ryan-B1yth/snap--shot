@@ -14,7 +14,9 @@ class OrderAdmin(admin.ModelAdmin):
         'delivery_amount',
         'order_amount',
         'grand_total',
-        'date'
+        'date',
+        'original_basket',
+        'stripe_pid'
     )
 
     list_display = (

@@ -27,7 +27,7 @@ def cache_checkout_data(request):
         stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
         stripe.PaymentIntent.modify(pid, metadata={
             'basket': json.dumps(request.session.get('basket', {})),
-            'save-location': request.POST.get('save-location'),
+            'save_location': request.POST.get('save_location'),
             'username': request.user,
         })
         return HttpResponse(status=200)
@@ -57,7 +57,11 @@ def checkout(request):
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_basket = json.dumps(basket)
+            order.save()
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -86,7 +90,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('products'))
             
-            request.session['save-location'] = 'save-location' in request.POST
+            request.session['save_location'] = 'save_location' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_no]))
         else:
             messages.error(
@@ -122,7 +126,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_no):
-    save_location = request.session.get('save-location')
+    save_location = request.session.get('save_location')
     order = get_object_or_404(Order, order_no=order_no)
     messages.success(
         request,
