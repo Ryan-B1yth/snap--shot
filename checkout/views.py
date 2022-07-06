@@ -1,7 +1,14 @@
 import os
 if os.path.isfile('env.py'):
     import env
-from django.shortcuts import render, reverse, redirect, get_object_or_404
+from django.shortcuts import (
+    render,
+    reverse,
+    redirect,
+    get_object_or_404,
+    HttpResponse
+    )
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from .forms import OrderForm
@@ -10,6 +17,24 @@ from products.models import Product
 from .models import Order, OrderLineItem
 
 import stripe
+import json
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
+        stripe.PaymentIntent.modify(pid, metadata={
+            'basket': json.dumps(request.session.get('basket', {})),
+            'save-location': request.POST.get('save-location'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as ex:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=ex, status=400)
 
 
 def checkout(request):
