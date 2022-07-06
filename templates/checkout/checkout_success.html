@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/basket.css' %}">
+
+{% endblock %}
+
+{% block title %} | Success{% endblock %}
+
+{% block content %}
+    <h2>Order Success! Thank you for shopping with us</h2>
+    <h3>A receipt has been sent to {{ order.email }}</h3>
+    
+    
+    <button class="btn"><a href="{% url 'products' %}">Shop some more?</a></button>
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

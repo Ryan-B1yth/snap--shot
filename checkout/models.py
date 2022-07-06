@@ -44,7 +44,7 @@ class Order(models.Model):
         super().save(*args, **kwargs)
 
     def update_total(self):
-        self.order_amount = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_amount = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_amount < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_amount = self.order_amount * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
