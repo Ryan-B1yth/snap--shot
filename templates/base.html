@@ -26,9 +26,9 @@
             <ul>
                 {% if user.is_authenticated %}
                     {% if user.is_superuser %}
-                        <li><a href="#">Site management</a></li>
+                        <li><a href="{% url 'add_product' %}">Site management</a></li>
                     {% endif %}
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="{% url 'user_profile' %}">Profile</a></li>
                     <li><a href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
                     <li><a href="{% url 'account_login' %}">Login</a></li>
