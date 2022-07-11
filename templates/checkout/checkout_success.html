@@ -13,8 +13,11 @@
     <h2>Order Success! Thank you for shopping with us</h2>
     <h3>A receipt has been sent to {{ order.email }}</h3>
     
-    
-    <button class="btn"><a href="{% url 'products' %}">Shop some more?</a></button>
+    {% if from_profile %}
+        <button class="btn"><a href="{% url 'order_history' %}">Back to order history</a></button>
+    {% else %}
+        <button class="btn"><a href="{% url 'products' %}">Shop some more?</a></button>
+    {% endif %}
 {% endblock %}
 
 

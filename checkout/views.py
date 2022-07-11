@@ -15,6 +15,8 @@ from .forms import OrderForm
 from basket.contexts import basket_contents
 from products.models import Product
 from .models import Order, OrderLineItem
+from profiles.models import Profile
+from profiles.forms import ProfileForm
 
 import stripe
 import json
@@ -89,7 +91,7 @@ def checkout(request):
                         )
                     order.delete()
                     return redirect(reverse('products'))
-            
+
             request.session['save_location'] = 'save_location' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_no]))
         else:
@@ -128,6 +130,26 @@ def checkout(request):
 def checkout_success(request, order_no):
     save_location = request.session.get('save_location')
     order = get_object_or_404(Order, order_no=order_no)
+
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+        if save_location:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_country': order.country,
+                'default_postcode': order.postcode,
+                'default_city': order.city,
+                'default_address_1': order.address_1,
+                'default_address_2': order.address_2,
+                'default_county': order.county,
+            }
+            user_profile_form = ProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+
     messages.success(
         request,
         'Order success! Please check your email for a receipt'
@@ -135,7 +157,7 @@ def checkout_success(request, order_no):
         )
     if 'basket' in request.session:
         del request.session['basket']
-    
+
     context = {
         'order': order,
     }

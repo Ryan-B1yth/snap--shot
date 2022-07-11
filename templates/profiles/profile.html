@@ -14,8 +14,18 @@
             <button type="submit">Update</button>
         </form>
 
-        <div class="orders">
-            {{ orders }}
+        <div class="order-history">
+            {% for order in orders %}
+                <h3><a href="" title="{{ order.order_no }}">{{ order.order_no|truncatechars:8 }}</a></h3>
+                <p>{{ order.date }}</p>
+                <ul>
+                    {% for item in order.lineitems.all %}
+                        <li>{{ item }} {% if item.product.has_size %}: {{ item.product.size }} {% endif %} x {{ item.quantity }}</li>
+                    {% endfor %}
+                </ul>
+
+                <p>{{ order.grand_total }}</p>
+            {% endfor %}
         </div>
     {% endif %}
 
