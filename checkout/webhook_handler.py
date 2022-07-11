@@ -1,6 +1,10 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from checkout.models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import Profile
 
 import json
 import time
@@ -9,6 +13,24 @@ import time
 class StripeWebhookHandler:
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/email_subject.txt',
+            {'order': order}
+        )
+        body = render_to_string(
+            'checkout/confirmation_emails/email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+        )
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [email]
+            )
 
     def handle_event(self, event):
         return HttpResponse(
@@ -20,7 +42,7 @@ class StripeWebhookHandler:
         intent = event.data.object
         pid = intent.id
         basket = intent.metadata.basket
-        # save_location = intent.metadata.save_location
+        save_location = intent.metadata.save_location
 
         billing_details = intent.charges.data[0].billing_details
         shipping = intent.shipping
@@ -29,7 +51,21 @@ class StripeWebhookHandler:
         for field, value in shipping.address.items():
             if value == "":
                 shipping.address[field] = None
-        
+
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = Profile.objects.get(user__username=username)
+            if save_location:
+                profile.default_phone_number = shipping.phone
+                profile.default_country = shipping.address.country
+                profile.default_postcode = shipping.address.postal_code
+                profile.default_city = shipping.address.city
+                profile.default_address_1 = shipping.address.line1
+                profile.default_address_2 = shipping.address.line2
+                profile.default_county = shipping.address.state
+                profile.save()
+
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -54,6 +90,7 @@ class StripeWebhookHandler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -62,6 +99,7 @@ class StripeWebhookHandler:
             try:
                 order = Order.objects.create(
                     name=shipping.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping.phone,
                     country=shipping.address.country,
@@ -97,6 +135,7 @@ class StripeWebhookHandler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
