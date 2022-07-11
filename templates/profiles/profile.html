@@ -7,6 +7,18 @@
 {% block title %} | Profile{% endblock %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+
+        <div class="orders">
+            {{ orders }}
+        </div>
+    {% endif %}
+
 {% endblock %}
 
 {% block js %}
