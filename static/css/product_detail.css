@@ -63,24 +63,24 @@
 } */
 
 .main-img img {
-    width: 60%;
-    height: auto;
+    height: 100px;
+    width: 100px;
 }
 
-.extra-images {
+/* .extra-images {
     min-width: 400px;
     display: flex;
     justify-content: space-between;
     padding-top: 1em;
     background-color: #FFFFFF;
     padding: .5em;
-}
+} */
 
-.img-s {
+/* .img-s {
     height: 50px;
     aspect-ratio: 1 / 1;
     background-color: rgb(241, 241, 241);
-}
+} */
 
 .item-information {
     min-width: 400px;
