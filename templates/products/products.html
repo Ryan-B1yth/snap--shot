@@ -24,7 +24,11 @@
     {% for product in products %}
         <div class="item-p">
             <div class="item-img">
-                <img src="" alt="">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="">
+                {% else %}
+                    <img src="{{ MEDIA_URL}}no-image.jpg" alt="No image available">
+                {% endif %}
             </div>
             <div class="item-info">
                 <h3 class="item-name">{{ product.name }}</h3>

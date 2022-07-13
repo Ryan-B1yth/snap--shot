@@ -9,7 +9,7 @@ class ProductForm(forms.ModelForm):
         fields = '__all__'
 
     image = forms.ImageField(
-        label="",
+        label='',
         required=False,
         widget=CustomClearableFileInput
         )
