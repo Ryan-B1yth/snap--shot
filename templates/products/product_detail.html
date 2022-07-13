@@ -15,7 +15,11 @@
     <div class="items-main">
         <div class="item-images">
             <div class="main-img">
-                <img src="{{ product.image.url }}" alt="">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="">
+                {% else %}
+                    <img src="{{ MEDIA_URL}}no-image.jpg" alt="No image available">
+                {% endif %}
             </div>
         </div>
         <div class="item-information">
