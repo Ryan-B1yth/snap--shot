@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% block css %}
 {% endblock %}
 
 {% block title %} | Home{% endblock %}
 
 {% block content %}
+    <img id="hero-image" src="{{ MEDIA_URL }}/jonathan-borba-iC1C54Cm6Mc-unsplash.jpg" alt="Hero image">
 {% endblock %}
 
 {% block js %}
