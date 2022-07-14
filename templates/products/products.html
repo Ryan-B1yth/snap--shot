@@ -4,6 +4,7 @@
 {% block css %}
 
     <link rel="stylesheet" href="{% static 'css/items.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
 
 {% endblock %}
 
@@ -11,33 +12,39 @@
 
 {% block content %}
     <h3 class="center">{{ products|length }} products {% if search_term %} found in {{ search_term }}{% endif %}</h3>
-    <select id="sort-selector" class="">
-        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-    </select>
-
-    {% for product in products %}
-        <div class="item-p">
-            <div class="item-img">
-                {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="">
-                {% else %}
-                    <img src="{{ MEDIA_URL}}no-image.jpg" alt="No image available">
-                {% endif %}
+    <div id="sort-selector-container" class="center">
+        <select id="sort-selector">
+            <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+            <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+            <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+            <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+            <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+            <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+            <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+        </select>
+    </div>
+    
+    
+    <section class="product-container">
+        {% for product in products %}
+            <div class="item-p">
+                <div class="item-img">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="">
+                    {% else %}
+                        <img src="{{ MEDIA_URL}}no-image.jpg" alt="No image available">
+                    {% endif %}
+                </div>
+                <div class="item-info">
+                    <h3 class="item-name">{{ product.name }}</h3>
+                    <h4 class="item-price">£{{ product.price }}</h4>
+                    <p  class="category-tag"><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></p>
+                    <div class="see-more"><a href="{% url 'product_detail' product.id %}">See more</a></div>
+                </div>
             </div>
-            <div class="item-info">
-                <h3 class="item-name">{{ product.name }}</h3>
-                <h4 class="item-price">£{{ product.price }}</h4>
-                <p  class="category-tag"><a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></p>
-                <div class="see-more"><a href="{% url 'product_detail' product.id %}">See more</a></div>
-            </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </section>
+    
 
 
 {% endblock %}

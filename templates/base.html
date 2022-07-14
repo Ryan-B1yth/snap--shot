@@ -26,7 +26,7 @@
             <ul>
                 <li>
                     <form action="{% url 'products' %}" method="GET">
-                        <input type="search" name="q" id="" placeholder="Search...">
+                        <input class="search" type="search" name="q" id="" placeholder="Search...">
                     </form>
                 </li>
 
@@ -73,7 +73,6 @@
         </div>
     </section>
         
-    
     <div class="free-delivery">
         <p>Free delivery over £{{ free_delivery_threshold }}</p>
     </div>
@@ -81,7 +80,7 @@
     {% endblock %}
 
     <div id="back-to-top">
-        <button>Back to top</button>
+        <button class="btn-black">Back to top</button>
     </div>
 
     {% if messages %}

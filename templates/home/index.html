@@ -8,6 +8,12 @@
 
 {% block content %}
     <img id="hero-image" src="{{ MEDIA_URL }}/jonathan-borba-iC1C54Cm6Mc-unsplash.jpg" alt="Hero image">
+
+    <div class="welcome-message">
+        <h1>Welcome to SnapShot</h1>
+        <a href="{% url 'products' %}" class="btn-black">Shop now</a>
+    </div>
+
 {% endblock %}
 
 {% block js %}

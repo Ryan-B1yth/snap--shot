@@ -1,0 +1,14 @@
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em 0;
+}
+
+#sort-selector {
+    padding: .5em 4em .5em .25em;
+    margin: 1em;
+    border-radius: 50px;
+}

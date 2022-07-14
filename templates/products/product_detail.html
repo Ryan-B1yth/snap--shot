@@ -10,10 +10,14 @@
 {% block title %} | {{ product.name }}{% endblock %}
 
 {% block content %}
+    {% if product.image %}
+        <img src="{{ product.image.url }}" alt="" class="items-body-img">
+    {% else %}
+        <img src="{{ MEDIA_URL}}no-image.jpg" alt="" class="items-body-img">
+    {% endif %}
 
-    <div class="items-body-img"></div>
     <div class="items-main">
-        <div class="item-images">
+        <div class="item-images shadow">
             <div class="main-img">
                 {% if product.image %}
                     <img src="{{ product.image.url }}" alt="">
@@ -22,7 +26,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="item-information">
+        <div class="item-information shadow">
             <h1 class="item-title">{{ product.name }}</h1>
             <div class="item-description">{{ product.description }}</div>
             <p>£{{ product.price }}</p>
@@ -60,7 +64,7 @@
 
 
         </div>
-        <div class="item-extra-info">
+        <div class="item-extra-info shadow">
             <h4>Others in this category - <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></h4>
         </div>
     </div>

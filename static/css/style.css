@@ -5,6 +5,7 @@
     text-decoration: none;
     list-style-type: none;
     font-family: Barlow, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
     color: #000000;
     position: relative;
 }
@@ -73,6 +74,40 @@ p {
     cursor: pointer;
 }
 
+.btn-black {
+    background: #000000;
+    color: #FFFFFF;
+    width: max-content;
+    padding: 1em 1.5em;
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    border: none;
+}
+
+.center {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.search {
+    padding: .5em 4em .5em .5em;
+    margin: 1em;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    background-color: black;
+    color: white;
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
+}
+
+.shadow {
+    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0);
+}
+
+.white-text-shadow {
+    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+}
+
 .toast {
     position: fixed;
     top: 20px;
@@ -112,14 +147,12 @@ p {
 }
 
 .free-delivery {
-    width: 100%;
+    width: max-content;
+    margin: 0 auto;
     text-align: center;
-    padding: 1em 0;
-    background-image: linear-gradient(
-        #FFFFFF,
-        transparent
-    )
+    padding: 1em 2em;
 }
+
 
 #hero-image {
     width: 100%;
@@ -127,4 +160,16 @@ p {
     position: absolute;
     top: -10px;
     filter: blur(8px);
+}
+
+.welcome-message {
+    background-color: rgba(0, 0, 0, .5);
+    width: max-content;
+    padding: 5em 15em 5em 5em;
+    margin: 5em 0 0 2em;
+}
+
+.welcome-message h1 {
+    color: #FFFFFF;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .5);
 }
