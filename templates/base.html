@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- MailChimp styles -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
     {% block css %}
     {% endblock %}
 
@@ -22,7 +22,7 @@
 <body>
     <header>
         <div class="logo">
-            <h1><a href="{% url 'home' %}">SnapShot</a></h1>
+            <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}logo.PNG" alt="SnapShot Logo"></a>
         </div>
         <nav class="main-nav">
             <ul>
