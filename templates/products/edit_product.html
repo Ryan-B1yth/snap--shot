@@ -10,14 +10,16 @@
 {% if user.is_superuser %}
     <h2>Management</h2>
     <h3>Add a product</h3>
-
-    <form action="{% url 'edit_product' product.id %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Update</button>
-        <a href="{% url 'delete_product' product.id %}">Delete</a>
-        <a href="{% url 'products' %}">Cancel</a>
-    </form>
+    <div class="form-container">
+        <form action="{% url 'edit_product' product.id %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+            <a href="{% url 'delete_product' product.id %}">Delete</a>
+            <a href="{% url 'products' %}">Cancel</a>
+        </form>
+    </div>
+    
 {% else %}
 
     <div class="restricted">

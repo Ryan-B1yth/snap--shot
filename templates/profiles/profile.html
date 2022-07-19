@@ -8,11 +8,14 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Update</button>
-        </form>
+        <div class="form-container">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn-black" type="submit">Update</button>
+            </form>
+        </div>
+        
 
         <div class="order-history">
             {% for order in orders %}

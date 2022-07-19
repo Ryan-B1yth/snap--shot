@@ -7,3 +7,20 @@
     width: 100%;
     background-color: rgba(0, 0, 0, .5);
 }
+
+h2, h3 {
+    padding: 1em;
+}
+
+.order-summary {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-list {
+    display: inherit;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}

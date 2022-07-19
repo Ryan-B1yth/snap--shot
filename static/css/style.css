@@ -6,7 +6,6 @@
 *, body, html {
     margin: 0;
     padding: 0;
-    /* background-color: var(--clr-background); */
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
@@ -14,6 +13,10 @@
     font-weight: 300;
     color: var(--clr-secondary);
     position: relative;
+}
+
+body {
+    background-color: var(--clr-background);
 }
 
 /* MailChimp styles */
@@ -26,6 +29,11 @@
 
 a {
     cursor: pointer;
+}
+
+.center {
+    width: max-content;
+    margin: 0 auto;
 }
 
 .logo {
@@ -98,10 +106,14 @@ p {
     color: var(--clr-background);
     width: max-content;
     padding: 1em 1.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.off-center {
     position: absolute;
     right: 50px;
     bottom: 30px;
-    border: none;
 }
 
 .center {
