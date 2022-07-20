@@ -26,9 +26,9 @@
                             <form class="update-form" action="{% url 'update_basket' item.item_id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="quantity-change">
-                                    <div class="decrement" id="decrement"><button class="btn-black">-</button></div>
-                                    <input id="quantity" class="btn-black" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
-                                    <div class="increment" id="increment"><button class="btn-black">+</button></div>
+                                    <div class="decrement" id="decrement"><button class="btn-black btn-black-s">-</button></div>
+                                    <input id="quantity" class="btn-black btn-black-s" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    <div class="increment" id="increment"><button class="btn-black btn-black-s">+</button></div>
                                 </div>
                                 {% if item.product.size %}
                                     <input type="hidden" name="product_size" value="{{ item.size }}">

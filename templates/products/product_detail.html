@@ -37,9 +37,9 @@
                 {% csrf_token %}
                 <p>Quantity: </p>
                 <div class="quantity-change">
-                    <div class="decrement" id="decrement"><button class="btn-black">-</button></div>
-                    <input class="btn-black" id="quantity" class="btn" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                    <div class="increment" id="increment"><button class="btn-black">+</button></div>
+                    <div class="decrement" id="decrement"><button class="btn-black-s">-</button></div>
+                    <input class="btn-black-s" id="quantity" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    <div class="increment" id="increment"><button class="btn-black-s">+</button></div>
                 </div>
                 <div class="add-to-basket">
                     {% if product.sizes %}

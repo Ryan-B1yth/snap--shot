@@ -17,15 +17,26 @@
 
 body {
     background-color: var(--clr-background);
+    height: fit-content;
+}
+
+footer {
+    margin-top: 5em;
+    width: 100%;
+    position: relative;
+    background-color: var(--clr-background);
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
 }
 
 /* MailChimp styles */
-#mc_embed_signup{
-    background: var(--clr-background);
+#mc_embed_signup {
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     color: var(--clr-secondary);
     box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
+    position: absolute;
+    height: 100%;
+    width: 100%
 }
 
 a {
@@ -87,12 +98,6 @@ p {
     gap: 1em;
 }
 
-#back-to-top {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-}
-
 .btn {
     margin: 0;
     padding: .75em 2em;
@@ -102,14 +107,31 @@ p {
     cursor: pointer;
 }
 
-.btn-black {
-    background: var(--clr-secondary);
+.btn-black, .btn-black-s {
+    background-color: var(--clr-secondary);
     color: var(--clr-background);
     width: max-content;
-    padding: 1em 1.5em;
     border: none;
     cursor: pointer;
 }
+
+.btn-black {
+    padding: 1em 1.5em;
+}
+
+.btn-black-s {
+    padding: .5em 1em;
+}
+
+
+#back-to-top {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10000;
+    background-color: #53565a7e;
+}
+
 
 .off-center {
     position: absolute;
@@ -197,7 +219,7 @@ p {
     background-color: rgba(0, 0, 0, .5);
     width: max-content;
     padding: 5em 15em 5em 5em;
-    margin: 5em 0 0 2em;
+    margin: 5em 0 5em 2em;
 }
 
 .welcome-message h1 {
