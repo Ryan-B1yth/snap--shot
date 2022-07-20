@@ -17,7 +17,7 @@
                 {% for item in basket_items %}
                     <div class="grid-item-row">
                         <div class="item-image">
-                            <img src="{{ item.product.image_url }}" alt="">
+                            <img src="{{ item.product.image.url }}" alt="">
                         </div>
                         <div class="item-name">
                             {{ item.product.name }}{% if item.size %}: {{ item.size }}{% endif %}
@@ -26,9 +26,9 @@
                             <form class="update-form" action="{% url 'update_basket' item.item_id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="quantity-change">
-                                    <div class="decrement" id="decrement"><button class="btn">-</button></div>
-                                    <input id="quantity" class="btn" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
-                                    <div class="increment" id="increment"><button class="btn">+</button></div>
+                                    <div class="decrement" id="decrement"><button class="btn-black">-</button></div>
+                                    <input id="quantity" class="btn-black" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    <div class="increment" id="increment"><button class="btn-black">+</button></div>
                                 </div>
                                 {% if item.product.size %}
                                     <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -57,8 +57,8 @@
                 <p>Total: £{{ grand_total|floatformat:2 }}</p>
             </div>
             <div class="call-to-action">
-                <button class="btn"><a href="{% url 'products' %}">Keep shopping</a></button>
-                <button class="btn"><a href="{% url 'checkout' %}">Go to checkout</a></button>
+                <a class="btn-black" href="{% url 'checkout' %}">Go to checkout</a>
+                <a href="{% url 'products' %}">Keep shopping</a>
             </div>
         </div>
     </section>

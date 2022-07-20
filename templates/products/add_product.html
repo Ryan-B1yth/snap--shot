@@ -7,15 +7,17 @@
 {% block title %} | Add a prodct{% endblock %}
 
 {% block content %}
-    <h2>Management</h2>
-    <h3>Add a product</h3>
-
+    <h2 class="center">Management</h2>
+    <h3 class="center">Add a product</h3>
+<div class="form-container">
     <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button class="btn-black" type="submit">Submit</button>
         <a href="{% url 'products' %}">Cancel</a>
     </form>
+</div>
+    
     
 {% endblock %}
 

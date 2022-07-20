@@ -1,10 +1,12 @@
 .basket-body {
     display: flex;
+    margin-left: 1em;
 }
 
 .item-list {
-    flex: 1;
+    flex: 2;
     height: auto;
+    padding: 2em;
 }
 
 .grid-item-row {
@@ -23,16 +25,33 @@
     flex: 1;
 }
 
+.item-image img {
+    max-width: 100%;
+}
+
 .item-name {
     flex: 2;
 }
 
+.btn-black {
+    padding: .5em 1em;
+}
+
+.quantity-change {
+    display: flex;
+    margin: .5em;
+    justify-content: center;
+}
+
 .receipt {
+    height: 100%;
+    padding: 2em;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
 }
 
 .receipt-content {
@@ -43,7 +62,6 @@
     height: 90%;
     flex-direction: column;
     gap: 1em;
-    background-color: #f6e3ba80;
 }
 
 .call-to-action {

@@ -25,6 +25,7 @@ body {
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     color: var(--clr-secondary);
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
 }
 
 a {
@@ -127,7 +128,7 @@ p {
     border-radius: 50px;
     border: 1px solid var(--clr-secondary);
     background-color: var(--clr-secondary);
-    color: white;
+    color: var(--clr-background);
     box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
 }
 
@@ -152,7 +153,7 @@ p {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
     background-color: var(--clr-secondary);
     position: sticky;
     top: 0;

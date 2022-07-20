@@ -1,4 +1,5 @@
-h1, p {
+h1,
+p { 
    width: max-content;
    margin: 0 auto;
 }
@@ -28,6 +29,7 @@ h1, p {
    text-align: center;
 }
 
+.select,
 .form-container form input,
 .form-container form select,
 .payment-form-container input,

@@ -26,9 +26,15 @@
     justify-content: space-between;
 }
 
+.item-images {
+    background-color: var(--clr-background);
+    display: flex;
+    align-items: center;
+}
+
 .main-img {
     --clr-choice: rgb(212, 212, 212);
-    height: 400px;
+    max-height: 400px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     display: flex;
@@ -48,6 +54,7 @@
     max-width: 75ch;
     width: 50%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
     background-color: var(--clr-background);
@@ -62,4 +69,30 @@
     align-items: center;
     justify-content: center;
     color: var(--clr-background);
+}
+
+.item-description {
+    max-width: 100%;
+}
+
+.item-description p {
+    max-width: 100%;
+    hyphens: auto;
+    padding: .5em 0;
+}
+
+.form {
+    align-items: center;
+}
+
+.quantity-change {
+    display: flex;
+    margin: .5em;
+    justify-content: center;
+}
+
+.add-to-basket {
+    display: flex;
+    justify-content: space-evenly;
+    padding: .5em 0;
 }
