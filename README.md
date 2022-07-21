@@ -27,12 +27,11 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
       + [Current Features](#current-features)
       + [Features to implement in the future](#features-to-implement-in-the-future)
    * [Structure](#structure)
-   * [Skeleton](#skeleton)
-   * [Surface](#surface)
-     + [Colour Scheme](#colour-scheme)
-     + [Typography](#typography)
-     + [Imagery](#imagery)
-     + [Design Choices](#design-choices)
+   * [Wireframes](#wireframes)
+   * [Colour Scheme](#colour-scheme)
+   * [Typography](#typography)
+   * [Imagery](#imagery)
+   * [Design Choices](#design-choices)
 - [Technologies](#technologies)
    * [Languages used](#languages-used)
    * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
@@ -204,18 +203,168 @@ Testing and results can be found [here](TESTING.md)
 ## Deployment
 
  - ### Creation 
+   - This project was created using Code Institute's Full Gitpod Template following these steps: 
 
-  - ### Forking
+     1. Sign into a Github profile.
+     2. Click "New" next to recent repositories.
+     3. Select ```Code-Institute-Org/gitpod-full-template``` in the templates dropdown.
+     4. Give it a name and a description (optional).
+     5. Set the repo to public.
+     6. Click "Create repository".
+
+   - Once inside the repository, click the green "Gitpod" button to open the IDE.
+
+   - ### Forking
+     - To fork this project:
+
+      1. Navigate the repository on Github.
+      2. Click "Fork" in the top right of the screen.
+      3. (Optional) Re-name the repository and give it a description.
+      4. Click "Create fork".
+   
+   - Once inside the repository, click the green "Gitpod" button to open the IDE.
 
   - ### Clone
+    - Note: in your command line, make sure you are located within the directory that you want the project to be cloned into.
+     - To clone this project:
+
+      1. Navigate to the project repository.
+      2. Click the "Code" dropdown menu.
+      3. Select either HTTPS or SSH depending on your preference.
+      4. Copy the link generated for you.
+      5. Open your IDE of choice.
+      6. In the command line, type:
+         - ``` git clone <your copied link> ```
+      7. Hit enter and the repository files will be cloned into your IDE.
 
 - ### Setting Up Project
+  - Once you have the project open in your IDE, you will need to download some dependencies to make sure the project works as expected. 
+
+  1. Firstly, install Django 3.2 with:
+    - ``` pip3 install Django==3.2 ```
+  
+  2. Next, ``` pip3 install ``` the following dependencies:
+    - boto
+    - botocore
+    - dj-database-url
+    - Django
+    - django-allauth
+    - django-countries
+    - django-storages
+    - gunicorn
+    - Pillow
+    - psycopg2-binary
+    - stripe
+  
+  3. In the command line, run ``` python3 manage.py makemigrations ``` followed by ``` python3 manage.py migrate ``` to migrate all the models.
+
+  4. In the command line, run ``` python3 manage.py runserver ``` to run the project in the browser. 
  
 - ### Setting up AWS
-   
+
+  - Create an account with AWS at [this link](https://aws.amazon.com/). Using the search bar, navigate to the S3 service and click "Create Bucket". Inside the form, name the bucket and deselect "Block all public access". Click "Create Bucket".
+
+  - Inside this bucket. in the "Properties" tab, find "Static Website Hosting" and click edit. Select enable and fill in index.html with ``` index.html ``` and error.html with ``` error.html ```. This project does not require this but it is necessary for the bucket.
+  
+  - Inside the "Permissions" tab, paste the following into the CORS section:
+
+  ```
+    [
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+    ]
+  ```
+
+  - Then, in "Bucket Policy", click "Edit", followed by "Policy Generator" which will open in a new tab, and fill in the form with these values:
+    - Type: S3 Bucket Policy
+    - Effect:  Allow
+    - Principal: *
+    - AWS Service: Amazon S3
+    - Actions: Get Object
+    - Amazon Resource Name: paste in the "Bucket ARN" from the previous page.
+  
+  - In the AWS search bar, search for IAM and click the top result.
+  - Inside IAM, click "User Grounps" and then "Create User Group".
+  - Name the user groups and click "Creat Group".
+
+  - In the side menu, click Policies, then "Create Policy". In the JSON tab, click "Import Managed Policy" and select "Amazon S3 Full Access". Inside the JSON code, in the "Resource" key, paste in your Bucket ARN from earlier and append ``` /*``` to the end.
+  - Click through until the end of the process until you see "Revise Policy" where you can give your policy and name and a description. Then click "Create Policy".
+
+  - Inside the User Group you just created, click the "Permissions" tab and attach the policy you just created.
+
+  - In the IAM menu, click "Users", then "Add user". Give the user a name and select "Access Key Programmatic Access"., then click "Next".
+  - Add your new user to your group, click "Next" and finally "Create User".
+
+  - From here, download the CSV file and save it. **This will be the only time you can do this so save it somewhere you won't accidentally delete it.**
+
+  - Open your downloaded CSV file in Excel. 
+  - Inside you project on Heroku (you will need to create one if you haven't already), add the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY keys to your config vars.
+  - Then in ```settings.py``` in the project repo, change the AWS_STORAGE_BUCKET_NAME to the name of your bucket.
+
+  - The final step of setting up AWS is to navigate back to your S3 Bucket on AWS, click "Create Folder", name it ``` media ``` (it should display as /media/) and click "Create". This is where you can upload any images you wish to add to the site.
+
 - ### Setting up Stripe
 
+  - Create an account with Stripe [here](https://stripe.com/gb). You do not need to activate the account.
+
+  - In your Stripe Dashboard, click "Developers" and navigate to "API Keys" on the left. From here copy both the Publishable and Secret keys and paste them as variables either:
+    - In your Github variables,
+    - In an env.py file in the project repo **If you choose this option, make sure you add the env.py file into the .gitignore so that the sensitive information does not get pushed to Github**,
+      - In env.py:
+        ```
+          os.environ['STRIPE_WH_SECRET'] = '<Your signing secret>'
+
+        ```
+      - In settings.py:
+        ```
+        STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET',)
+        ```
+
+    - Into your config vars on Heroku if you plan to deploy this project yourself.
+
+  - Next, in Webhooks, under API keys in the menu, click "Add Endpoint". Where it asks for a URL, paste in the Github local host URL (typically starts with 8000) with ```/checkout/wh/``` appended to the end. **Note: the trailing / is very important here.**
+
+    - If you have deployed this project you must add its URL endpoint in here also, again with ```/chechout/wh/``` appended to the end.
+
+  - Next you need to add the events you want Stripe to listen out for. Select "All events" and then "Add Events". Finally click "Add Endpoint".
+
+  - Inside the Webhook, you can reveal the "Signing Secret", copy it and paste it as a variable in your chosen location as described above. 
+    - If you have a development project and a deployed project, you will have two different keys. In this scenario, in the project repo create the env.py file **(Not forgetting to add it to the .gitignore)**, paste the local host Signing Secret key here, and paste the deployed URL's Signing Secret into the Heroku config vars. 
+
+
 - ### Heroku deployment
+  
+  - Create a Heroku account [here](https://www.heroku.com).
+  - On the dashboard click "New" and "Create new app".
+  - Name your app and select the region closest to you.
+  - In the "Resources" tab, search for Postgres and select Heroku Postgres.
+  - In "Settings", reveal the Config Vars and make sure you have all of the following set:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - DATABASE_URL - this should be preset
+    - SECRET_KEY - you can generate one [here](https://djecrety.ir/) 
+    - STRIPE_PUBLIC_KEY
+    - STRIPE_SECRET_KEY
+    - STRIPE_WH_KEY
+    - USE_AWS - set to True
+  
+  - With all these set the project should run.
+
+  - Next, in your IDE, open the terminal and commit and push all your changes to Github.
+  - Login to Heroku on the command line using ``` heroku login -i ```, you will be prompted for your username and password. 
+  - Connect to your project using ``` heroku git:remote -a <your app name> ```
+  - Push all the code to Heroku using ``` git push heroku main ```. This step may take a while for the first deployment but when its done it'll give a link to the deployed site.
+
 
 ## Credits
 
