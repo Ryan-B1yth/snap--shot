@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
 {% load static %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/404.css' %}">
+
+{% endblock %}
 {% block content %}
-    <div class="container">
-        <h1>The page you're looking for does not exist.</h1>
-        <h3><a href="{% url 'home' %}">Return to SnapShot</a></h3>
+    <div class="logo">
+        <a href="{% url 'home' %}"><img src="{{ MEDIA_URL }}logo.PNG" alt="SnapShot Logo"></a>
     </div>
+    <h1 class="center">Are you lost?</h1> 
+    <h2 class="center">The page you're looking for does not exist.</h2>
+    <h3 class="center"><a href="{% url 'home' %}">Return to SnapShot</a></h3>
+
 {% endblock %}

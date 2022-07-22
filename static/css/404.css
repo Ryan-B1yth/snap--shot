@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    background: var(--clr-background);
+}
+
+.logo {
+    max-height: 300px;
+}
+
+.logo a img {
+    height: 100%;
+}
+
+h1,
+h2,
+h3 {
+    padding: 1em 0;
+}
