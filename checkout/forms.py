@@ -16,7 +16,7 @@ class OrderForm(forms.ModelForm):
             'county',
             'postcode',
             )
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {

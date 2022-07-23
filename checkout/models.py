@@ -52,22 +52,25 @@ class Order(models.Model):
         )
 
     def _generate_order_number(self):
-        return uuid.uuid4().hex.upper() 
-    
+        return uuid.uuid4().hex.upper()
+
     def save(self, *args, **kwargs):
         if not self.order_no:
             self.order_no = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def update_total(self):
-        self.order_amount = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.order_amount = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_amount < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_amount = self.order_amount * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            self.delivery_amount = (
+                self.order_amount * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+                )
         else:
             self.delivery_amount = 0
         self.grand_total = self.order_amount + self.delivery_amount
         self.save()
-    
+
     def __str__(self):
         return f'{self.order_no} - {self.name}'
 
@@ -95,8 +98,7 @@ class OrderLineItem(models.Model):
         blank=False,
         editable=False
         )
-    
+
     def save(self, *args, **kwargs):
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-

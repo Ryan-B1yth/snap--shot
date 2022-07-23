@@ -53,7 +53,7 @@ def update_basket(request, product_id):
         else:
             del basket[product_id]['item_by_size'][size]
             if not basket[product_id]['item_by_size']:
-                basket.pop(product_id) 
+                basket.pop(product_id)
     else:
         if quantity > 0:
             basket[product_id] = quantity

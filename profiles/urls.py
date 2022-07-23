@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import user_profile, order_history
+from .views import user_profile
+# , order_history
 
 urlpatterns = [
     path('', user_profile, name='user_profile'),

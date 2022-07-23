@@ -1,3 +1,6 @@
+import json
+import time
+
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -5,9 +8,6 @@ from django.conf import settings
 from checkout.models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import Profile
-
-import json
-import time
 
 
 class StripeWebhookHandler:
@@ -121,7 +121,8 @@ class StripeWebhookHandler:
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in (
+                                item_data['items_by_size'].items()):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -139,7 +140,7 @@ class StripeWebhookHandler:
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
-    
+
     def handle_payment_intent_failed(self, event):
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
