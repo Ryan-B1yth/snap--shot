@@ -145,7 +145,8 @@ p {
 }
 
 .search {
-    padding: .5em 4em .5em .5em;
+    padding: .5em;
+    width: 15em;
     margin: 1em;
     border-radius: 50px;
     border: 1px solid var(--clr-secondary);

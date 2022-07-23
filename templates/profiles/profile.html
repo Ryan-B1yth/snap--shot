@@ -13,10 +13,10 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn-black" type="submit">Update</button>
+                <a href="{% url 'account_reset_password' %}">Change password</a>
             </form>
         </div>
         
-
         <div class="order-history">
             {% for order in orders %}
                 <h3><a href="" title="{{ order.order_no }}">{{ order.order_no|truncatechars:8 }}</a></h3>
