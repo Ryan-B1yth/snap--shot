@@ -8,7 +8,7 @@ class TestViews(TestCase):
     """ Test product views """
 
     def setUp(self):
-        """ Create test records to use """
+        """ Set up """
         self.admin = User.objects.create(
             username="admin",
             password="admin",

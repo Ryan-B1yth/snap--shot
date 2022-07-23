@@ -8,6 +8,7 @@ class TestProductForm(TestCase):
     """ Test ProductForm """
 
     def setUp(self):
+        """ Set up """
         self.category = Category.objects.create(
             name='test',
             friendly_name='Test',
