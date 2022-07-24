@@ -37,7 +37,9 @@
 ## Unit Testing 
   - Automated testing was done for some of the project. Forms, models, and views were tested in each app that used a significant amount of code in these files. 
 
-  <!-- Coverage report -->
+  ![Coverage Report](static/assets/documentation/images/coverage_report.PNG)
+
+  - A coverage report of the project gave a 68% coverage.
 
 ## Testing User Stories 
 
