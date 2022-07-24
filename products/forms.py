@@ -1,9 +1,11 @@
+""" Imports """
 from django import forms
 from .models import Product, Category
 from .widgets import CustomClearableFileInput
 
 
 class ProductForm(forms.ModelForm):
+    """ Product form """
     class Meta:
         model = Product
         fields = '__all__'

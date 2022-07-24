@@ -1,6 +1,4 @@
-import os
-if os.path.isfile('env.py'):
-    import env
+import stripe
 
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
@@ -8,12 +6,15 @@ from django.views.decorators.csrf import csrf_exempt
 
 from checkout.webhook_handler import StripeWebhookHandler
 
-import stripe
+import os
+if os.path.isfile('env.py'):
+    import env
 
 
 @require_POST
 @csrf_exempt
 def webhook(request):
+    """ Webhook """
     wh_secret = os.environ.get('STRIPE_WH_SECRET')
     stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
 

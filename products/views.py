@@ -1,3 +1,4 @@
+""" Imports """
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -72,6 +73,7 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
+    """ Add product view """
     form = ProductForm()
 
     if request.method == 'POST':
@@ -96,6 +98,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
+    """ Edit product view """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -117,6 +120,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
+    """ Delete product view """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted successful')

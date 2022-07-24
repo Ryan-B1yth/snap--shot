@@ -1,6 +1,8 @@
-import os
-if os.path.isfile('env.py'):
-    import env
+""" Imports """
+import json
+
+import stripe
+
 from django.shortcuts import (
     render,
     reverse,
@@ -11,19 +13,25 @@ from django.shortcuts import (
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-from .forms import OrderForm
+
 from basket.contexts import basket_contents
+
 from products.models import Product
-from .models import Order, OrderLineItem
+
 from profiles.models import Profile
 from profiles.forms import ProfileForm
 
-import stripe
-import json
+from .forms import OrderForm
+from .models import Order, OrderLineItem
+
+import os
+if os.path.isfile('env.py'):
+    import env
 
 
 @require_POST
 def cache_checkout_data(request):
+    """ Cache checkout data """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
@@ -40,6 +48,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ Checkout view """
     stripe_public_key = os.environ.get('STRIPE_PUBLIC_KEY')
     stripe_secret_key = os.environ.get('STRIPE_SECRET_KEY')
 
@@ -145,6 +154,7 @@ def checkout(request):
 
 
 def checkout_success(request, order_no):
+    """ Checkout success view """
     save_location = request.session.get('save_location')
     order = get_object_or_404(Order, order_no=order_no)
 

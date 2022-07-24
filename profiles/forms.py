@@ -1,9 +1,12 @@
+""" Imports """
 from django import forms
 from .models import Profile
 
 
 class ProfileForm(forms.ModelForm):
+    """ Profile form """
     class Meta:
+        """ Meta data """
         model = Profile
         exclude = ('user',)
 

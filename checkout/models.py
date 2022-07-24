@@ -1,3 +1,4 @@
+""" Imports """
 import uuid
 from django.db import models
 from django.db.models import Sum
@@ -10,6 +11,7 @@ from profiles.models import Profile
 
 
 class Order(models.Model):
+    """ Order model """
     order_no = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         Profile,
@@ -76,6 +78,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ Order line item model """
     order = models.ForeignKey(
         Order,
         on_delete=models.CASCADE,

@@ -1,14 +1,18 @@
+""" Imports """
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 from checkout.models import Order
+
 from .models import Profile
 from .forms import ProfileForm
 
 
 @login_required
 def user_profile(request):
+    """ User profile view """
     profile = get_object_or_404(Profile, user=request.user)
 
     if request.method == 'POST':
@@ -32,6 +36,7 @@ def user_profile(request):
 
 @login_required
 def order_history(request, order_no):
+    """ Order history view """
     order = get_object_or_404(Order, order_no=order_no)
 
     context = {
