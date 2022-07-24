@@ -28,11 +28,11 @@
                     <button class="btn"><a href="{% url 'account_signup' %}">Create an account</a></button>
                 {% endif %}
                 <div class="stripe-form-container">
-                    <section class="stripe-payment">
+                    <div class="stripe-payment">
                         <div id="card-element"></div>
                         <div id="card-errors" role="alert"></div>
                         <input type="hidden" name="client_secret" value="{{ client_secret }}">
-                    </section>
+                    </div>
                 </div>
                 <button class="btn-black" id="submit-button">Complete order</button>
             </form>
@@ -47,7 +47,7 @@
                     {% for item in basket_items %}
                         <div class="grid-item-row">
                             <div class="item-image">
-                                <img src="{{ item.product.image_url }}" alt="">
+                                <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
                             </div>
                             <div class="item-name">
                                 {{ item.product.name }}{% if item.size %}: {{ item.size }}{% endif %}

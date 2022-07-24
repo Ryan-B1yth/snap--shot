@@ -9,7 +9,7 @@
 {% block content %}
     {% if user.is_authenticated %}
         <div class="form-container">
-            <form action="" method="POST">
+            <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn-black" type="submit">Update</button>

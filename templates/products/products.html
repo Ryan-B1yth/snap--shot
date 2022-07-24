@@ -30,9 +30,9 @@
             <div class="item-p">
                 <div class="item-img">
                     {% if product.image %}
-                        <img src="{{ product.image.url }}" alt="">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
                     {% else %}
-                        <img src="{{ MEDIA_URL}}no-image.jpg" alt="No image available">
+                        <img src="{{ MEDIA_URL }}no-image.jpg" alt="No image available">
                     {% endif %}
                 </div>
                 <div class="item-info">

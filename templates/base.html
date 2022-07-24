@@ -30,7 +30,7 @@
             <ul>
                 <li>
                     <form action="{% url 'products' %}" method="GET">
-                        <input class="search" type="search" name="q" id="" placeholder="Search...">
+                        <input class="search" type="search" name="q" placeholder="Search...">
                     </form>
                 </li>
 
@@ -61,7 +61,7 @@
             </ul>
         </nav>
     </header>
-    <section class="_filters">
+    <nav class="_filters">
         <div class="dropdown">
             <ul>
                 <li><a href="{% url 'products' %}?sort=price&direction=asc">By price</a></li>
@@ -75,7 +75,7 @@
                 <li><a href="{% url 'products'%}?category=digital">Digital</a></li>
             </ul>
         </div>
-    </section>
+    </nav>
         
     <!-- <div class="free-delivery">
         <p>Free delivery over £{{ free_delivery_threshold }}</p>
