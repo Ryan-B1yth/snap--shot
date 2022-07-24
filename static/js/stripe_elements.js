@@ -24,14 +24,13 @@ card.mount('#card-element');
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
     if (event.errors) {
-        var html = `
-            <p role="alert">${event.error.message}</p>
-        `
-    $(errorDiv).html(html)
+        var html = 
+            `<p role="alert">${event.error.message}</p>`;
+    $(errorDiv).html(html);
     } else {
         errorDiv.textContent = '';
     }
-})
+});
 
 var form = document.getElementById('payment-form');
 
@@ -85,7 +84,8 @@ form.addEventListener('submit', function(ev) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
                     <span class="icon" role="alert">
-                    <span>${result.error.message}</span>`;
+                    <span>${result.error.message}</span>
+                    `;
                 $(errorDiv).html(html);
                 $('#payment-form').fadeToggle(100);
                 $('#loading-overlay').fadeToggle(100);
@@ -99,5 +99,5 @@ form.addEventListener('submit', function(ev) {
         });
     }).fail(function () {
         location.reload();
-    })
+    });
 });
