@@ -15,6 +15,8 @@
 
 ## Automated Testing
 
+- Every file in this project was subjected to its file type's respective validator and passed 100% as seen below. Not all results are displayed as many of them look exactly the same however I have picked the files with the largest / more complex code base to demonstrate their results. 
+
 - [W3C Markup Validator](https://validator.w3.org/) 
 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 

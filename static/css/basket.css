@@ -29,8 +29,17 @@
     max-width: 100%;
 }
 
-.item-name {
+.item-name,
+.empty-basket {
     flex: 2;
+}
+
+.empty-basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
 }
 
 .quantity-change {

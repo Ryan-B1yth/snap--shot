@@ -1,5 +1,3 @@
-<div class="toast" data-autohide="false">
-    <h3 class="header">Warning!</h3>
-    <button data-dismiss="toast">X</button>
-    <p>{{ message }}</p>
-</div>
+{% extends 'includes/toasts/base.html' %}
+
+{% block type %}Warning{% endblock %}
