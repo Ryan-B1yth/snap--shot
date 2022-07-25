@@ -33,7 +33,7 @@ def add_to_basket(request, product_id):
             basket[product_id] += quantity
         else:
             basket[product_id] = quantity
-    messages.success(request, f'{product} added successfully')
+    messages.success(request, f'{product} added to basket.')
 
     request.session['basket'] = basket
 
@@ -60,7 +60,7 @@ def update_basket(request, product_id):
             basket[product_id] = quantity
         else:
             basket.pop(product_id)
-    messages.success(request, 'Updated!')
+    messages.success(request, 'Basket updated.')
 
     request.session['basket'] = basket
 
@@ -83,7 +83,7 @@ def remove_item(request, product_id):
         else:
             basket.pop(product_id)
 
-        messages.success(request, f'{product} removed.')
+        messages.success(request, f'{product} removed from basket.')
 
         request.session['basket'] = basket
         return HttpResponse(status=200)

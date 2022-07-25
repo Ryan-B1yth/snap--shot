@@ -96,8 +96,8 @@ def checkout(request):
                 except Product.DoesNotExist:
                     messages.error(
                         request,
-                        "It seems an item in your basket isn't in our database"
-                        "Please get in touch so we can assist you!"
+                        "It seems an item in your basket isn't in our database. \
+                        Please get in touch so we can assist you!"
                         )
                     order.delete()
                     return redirect(reverse('products'))
@@ -107,13 +107,13 @@ def checkout(request):
         else:
             messages.error(
                 request,
-                "There was a problem with your form."
-                "Please try again."
+                "There was a problem with your form. \
+                Please try again."
                 )
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, 'Nothing in the basket')
+            messages.error(request, "There's nothing in your basket.")
             return redirect(reverse('products', args=[order.order_no]))
 
         current_basket = basket_contents(request)
@@ -179,7 +179,7 @@ def checkout_success(request, order_no):
 
     messages.success(
         request,
-        'Order success! Please check your email for a receipt'
+        'Order success! Please check your email for a receipt.'
         f'{order_no}'
         )
     if 'basket' in request.session:

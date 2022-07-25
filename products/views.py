@@ -80,12 +80,12 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
-            messages.success(request, "Product added successfully")
+            messages.success(request, "Product added to basket.")
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
                 request,
-                'There seems to be a problem'
+                'There seems to be a problem. Please try again.'
                 )
     else:
         form = ProductForm()
@@ -104,10 +104,10 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Product updated!')
+            messages.success(request, 'Product information updated.')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Something went wrong, please try again.')
+            messages.error(request, 'Something went wrong. Please try again.')
     form = ProductForm(instance=product)
 
     context = {
@@ -123,6 +123,6 @@ def delete_product(request, product_id):
     """ Delete product view """
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, 'Product deleted successful')
+    messages.success(request, 'Product deleted.')
 
     return redirect('products')
