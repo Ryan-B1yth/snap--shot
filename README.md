@@ -91,7 +91,9 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
      - As a superuser / admin, I want to be able to:
        - Add, edit, and remove items from the site so that I can sell more products and remove the products that are not being sold to improve revenue.
 
-       <!-- Add screenshot of excel user stories here -->
+- A list of in projects user stories can be seen below:
+
+![User Stories](static/assets/documentation/images/user-stories.PNG)
 
 
    ### Current features 
