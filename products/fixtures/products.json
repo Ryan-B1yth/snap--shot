@@ -9,7 +9,134 @@
         "category": 1,
         "rating": 4.6,
         "image_url": "",
-        "image": "ancestor.PNG"
+        "image": "ancestor.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.product",
+      "fields": {
+        "name": "Aperture",
+        "description": "Many openings, many views. How would you like to perceive the world?",
+        "price": 32.50,
+        "category": 1,
+        "rating": 3.5,
+        "image_url": "",
+        "image": "aperture.PNG",
+        "sizes": "True"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "name": "Big Mouth",
+        "description": "So many words but so little said. Ellipses in thought leave you to wonder if it was worth saying at all.",
+        "price": 12.00,
+        "category": 1,
+        "rating": 4.2,
+        "image_url": "",
+        "image": "big-mouth.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "name": "Big Nose",
+        "description": "Perhaps a bit rude, but this animal knows when something smells fishy. Red and amber fur as fluffy as the truffula tree.",
+        "price": 16.75,
+        "category": 2,
+        "rating": 3.7,
+        "image_url": "",
+        "image": "big-nose.PNG",
+        "sizes": "True"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "products.product",
+      "fields": {
+        "name": "Could be a candle, maybe?",
+        "description": "Maybe its a candle. Maybe that's smoke behind. Or maybe its not a candle. And maybe those are clouds behind.",
+        "price": 29.99,
+        "category": 1,
+        "rating": 2.3,
+        "image_url": "",
+        "image": "could-be-a-candle-maybe.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 6,
+      "model": "products.product",
+      "fields": {
+        "name": "Cute and fluffy",
+        "description": "Just a fluffy little egg shaped animal. Don't you just want to cuddle up with it?",
+        "price": 15,
+        "category": 2,
+        "rating": 2.1,
+        "image_url": "",
+        "image": "cute-and-fluffy.PNG",
+        "sizes": "True"
+      }
+    },
+    {
+      "pk": 7,
+      "model": "products.product",
+      "fields": {
+        "name": "Dinner time",
+        "description": "This fox looking creature is looking at you like you're a meal. Perhaps you should start running, or not, if you think you can survive.",
+        "price": 20.00,
+        "category": 2,
+        "rating": 1.2,
+        "image_url": "",
+        "image": "dinner-time.PNG",
+        "sizes": "True"
+      }
+    },
+    {
+      "pk": 8,
+      "model": "products.product",
+      "fields": {
+        "name": "Doctor",
+        "description": "You are sick. You need help. The doctor will see you now.",
+        "price": 67.89,
+        "category": 1,
+        "rating": 4.5,
+        "image_url": "",
+        "image": "doctor.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 9,
+      "model": "products.product",
+      "fields": {
+        "name": "Doorway to heaven",
+        "description": "The place everyone hopes they'll end up, yet so few do. Go ahead, say hello to God.",
+        "price": 17.77,
+        "category": 2,
+        "rating": 4.1,
+        "image_url": "",
+        "image": "doorway-to-heaven.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 10,
+      "model": "products.product",
+      "fields": {
+        "name": "Doorway to hell",
+        "description": "The place everyone hopes they wont end up, yet so many do. Go ahead, say hello to God.",
+        "price": 16.66,
+        "category": 2,
+        "rating": 4.1,
+        "image_url": "",
+        "image": "doorway-to-hell.PNG",
+        "sizes": "False"
       }
     }
 ]

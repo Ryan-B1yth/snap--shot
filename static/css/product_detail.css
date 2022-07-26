@@ -33,7 +33,6 @@
 }
 
 .main-img {
-    --clr-choice: rgb(212, 212, 212);
     max-height: 400px;
     aspect-ratio: 1 / 1;
     overflow: hidden;
