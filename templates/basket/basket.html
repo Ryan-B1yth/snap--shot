@@ -15,7 +15,7 @@
         {% if basket_items %}
             <div class="item-list">
                 {% for item in basket_items %}
-                    <div class="grid-item-row">
+                    <div class="item-row">
                         <div class="item-image">
                             {% if item.product.image %}
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">

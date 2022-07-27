@@ -10,14 +10,17 @@
 {% block title %} | Success{% endblock %}
 
 {% block content %}
-    <h2>Order Success! Thank you for shopping with us</h2>
-    <h3>A receipt has been sent to {{ order.email }}</h3>
+    <h2 class="center">Order Success! Thank you for shopping with us.</h2>
+    <h3 class="center">A receipt has been sent to {{ order.email }}</h3>
     
-    {% if from_profile %}
-        <button class="btn"><a href="{% url 'order_history' %}">Back to order history</a></button>
-    {% else %}
-        <button class="btn"><a href="{% url 'products' %}">Shop some more?</a></button>
-    {% endif %}
+    <div class="call-to-action">
+        {% if from_profile %}
+            <a class="btn-black" href="{% url 'order_history' %}">Back to order history</a>
+        {% else %}
+            <a class="btn-black" href="{% url 'products' %}">Shop some more?</a>
+        {% endif %}
+    </div>
+
 {% endblock %}
 
 

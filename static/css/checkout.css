@@ -18,9 +18,6 @@ h2, h3 {
     flex-direction: row;
 }
 
-.item-list {
-    display: inherit;
-    flex: 2;
-    align-items: center;
-    justify-content: center;
+.receipt {
+    max-height: 300px;
 }
