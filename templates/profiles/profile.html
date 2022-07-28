@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block css %}
+
+<link rel="stylesheet" href="{% static 'css/profiles.css' %}">
+
 {% endblock %}
 
 {% block title %} | Profile{% endblock %}
@@ -14,22 +17,27 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn-black" type="submit">Update</button>
-                <a href="{% url 'account_reset_password' %}">Change password</a>
+                <a class="change-password" href="{% url 'account_reset_password' %}">Change password</a>
             </form>
         </div>
         
         <div class="order-history">
-            {% for order in orders %}
-                <h3><a href="" title="{{ order.order_no }}">{{ order.order_no|truncatechars:8 }}</a></h3>
-                <p>{{ order.date }}</p>
-                <ul>
-                    {% for item in order.lineitems.all %}
-                        <li>{{ item }} {% if item.product.has_size %}: {{ item.product.size }} {% endif %} x {{ item.quantity }}</li>
-                    {% endfor %}
-                </ul>
+            <h2 class="center">Order history</h2>
+            {% if orders %}
+                {% for order in orders %}
+                    <h3 class="center">{{ order.order_no|truncatechars:10 }}</h3>
+                    <p>{{ order.date }}</p>
+                    <ul>
+                        {% for item in order.lineitems.all %}
+                            <li class="center"><a href="{% url 'product_detail' item.product.id %}">{{ item.product.name }}</a> {% if item.product.has_size %}: {{ item.product.size }} {% endif %} x {{ item.quantity }}</li>
+                        {% endfor %}
+                    </ul>
 
-                <p>{{ order.grand_total }}</p>
+                    <p>£{{ order.grand_total }}</p>
             {% endfor %}
+            {% else %}
+                <p class="center">Nothing yet...</p>
+            {% endif %}
         </div>
     {% endif %}
 

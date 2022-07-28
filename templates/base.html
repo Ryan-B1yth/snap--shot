@@ -48,6 +48,9 @@
                 <li>
                     <div class="basket">
                         <a href="{% url 'basket' %}">
+                            {% if user.is_authenticated %}
+                                <span>{{ request.user }}</span>
+                            {% endif %}
                             <p>
                                 {% if grand_total %}
                                     £{{ grand_total|floatformat:2 }}
@@ -76,10 +79,7 @@
             </ul>
         </div>
     </nav>
-        
-    <!-- <div class="free-delivery">
-        <p>Free delivery over £{{ free_delivery_threshold }}</p>
-    </div> -->
+    
     {% block content %}
     {% endblock %}
 

@@ -1,0 +1,15 @@
+.change-password {
+    color: var(--clr-background);
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+}
+
+.order-history {
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--clr-background);
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
+}
+
+.order-history * {
+    padding: 1em;
+}
