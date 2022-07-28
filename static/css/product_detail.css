@@ -62,12 +62,21 @@
 
 .item-extra-info {
     width: 100%;
-    height: 100px;
-    background-color: rgb(241, 241, 241);
-    display: flex;
-    align-items: center;
+    height: auto;
+    text-align: left;
+    background-color: var(--clr-background);
     justify-content: center;
-    color: var(--clr-background);
+    color: var(--clr-secondary);
+}
+
+.item-extra-info h2 {
+    padding: 1em 0;
+}
+
+.item-extra-info .review * {
+    margin: 0;
+    padding: .5em 1em;
+    max-width: 100%;
 }
 
 .item-description {

@@ -1,4 +1,4 @@
-Hey {{ order.name }}!
+Hey there!
 
 This is just to confirm your order was successful. 
 

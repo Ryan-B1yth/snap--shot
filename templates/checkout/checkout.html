@@ -18,14 +18,15 @@
         <div class="payment-form-container">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                {{ order_form }}
-    
+                
                 {% if user.is_authenticated %}
+                    {{ order_form }}
                     <label for="save_location">Save address for future purchases</label>
                     <input type="checkbox" name="save_location" id="save_location" checked>
                 {% else %}
-                    <button class="btn"><a href="{% url 'account_login' %}">Login</a></button>
-                    <button class="btn"><a href="{% url 'account_signup' %}">Create an account</a></button>
+                    <a class="btn-black" href="{% url 'account_login' %}">Login</a>
+                    <a class="btn-black" href="{% url 'account_signup' %}">Create an account</a>
+                    {{ order_form }}
                 {% endif %}
                 <div class="stripe-form-container">
                     <div class="stripe-payment">
@@ -73,9 +74,6 @@
                     <p>Grand total: £{{ grand_total|floatformat:2 }}</p>
                 </div>
             {% endif %}
-    </div>
-    <div id="loading-overlay">
-
     </div>
 {% endblock %}
 

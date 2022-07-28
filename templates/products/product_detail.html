@@ -70,7 +70,19 @@
 
         </div>
         <div class="item-extra-info shadow">
-            <h4>Others in this category - <a href="{% url 'products' %}?category={{ product.category.name }}">{{ product.category.friendly_name }}</a></h4>
+            <h2 class="center">Reviews</h2>
+            {% if user.is_authenticated %}
+                <h3 class="center"><a href="{% url 'review' product.id %}">Leave a review?</a></h3>
+            {% endif %}
+            {% for review in reviews %}
+                {% if review.product.name == product.name %}
+                    <div class="review">
+                        <h2>{{ review.user }}</h2>
+                        <p>{{ review.text }}</p>
+                    </div>
+                    <br>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 

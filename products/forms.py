@@ -1,6 +1,6 @@
 """ Imports """
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Review
 from .widgets import CustomClearableFileInput
 
 
@@ -22,3 +22,15 @@ class ProductForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
+
+
+class ReviewForm(forms.ModelForm):
+    """ Review form """
+    class Meta:
+        model = Review
+        fields = '__all__'
+
+        # widgets = {
+        #     'user': forms.HiddenInput(),
+        #     'product': forms.HiddenInput()
+        # }

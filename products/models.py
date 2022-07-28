@@ -1,5 +1,6 @@
 """ Imports """
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -40,3 +41,10 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Review(models.Model):
+    """ Product review """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField(max_length=250, null=False, blank=False)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)

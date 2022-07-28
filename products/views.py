@@ -4,8 +4,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
-from .forms import ProductForm
+from django.views.generic import CreateView
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 
 def all_products(request):
@@ -64,8 +65,10 @@ def product_detail(request, product_id):
     """ Product detail view """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.all()
     context = {
         'product': product,
+        'reviews': reviews
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -126,3 +129,31 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted.')
 
     return redirect('products')
+
+
+@login_required
+def review(request, product_id):
+    """ Review product """
+    default_user = request.user
+    product = get_object_or_404(Product, pk=product_id)
+    form = ReviewForm(
+            request.POST or None,
+            initial={
+                'user': default_user,
+                'product': product
+            }
+        )
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review posted.')
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            messages.error(request, 'Something went wrong. Please try again.')
+
+    context = {
+        'form': form,
+        'product': product
+    }
+
+    return render(request, 'products/review.html', context)

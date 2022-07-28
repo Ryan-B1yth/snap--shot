@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+    <h1 class="center">Leave a review for {{ product }}</h1>
+    <div class="form-container">
+        <form action="{% url 'review' product.id %}" method="POST">
+            {% csrf_token %}
+            {{ form.errors }}
+            {{ form }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
