@@ -24,11 +24,10 @@ body {
 }
 
 footer {
-    /* margin-top: 5em; */
     width: 100%;
     min-height: 300px;
     position: absolute;
-    bottom: -100px;
+    bottom: -300px;
     background-color: var(--clr-background);
 }
 
@@ -44,6 +43,10 @@ footer {
 
 a {
     cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .center {
@@ -163,7 +166,7 @@ p {
 }
 
 .shadow {
-    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0);
+    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, .5);
 }
 
 .white-text-shadow {
@@ -215,14 +218,3 @@ p {
     filter: blur(8px);
 }
 
-.welcome-message {
-    background-color: rgba(0, 0, 0, .5);
-    width: max-content;
-    padding: 5em 15em 5em 5em;
-    margin: 5em 0 5em 2em;
-}
-
-.welcome-message h1 {
-    color: var(--clr-background);
-    text-shadow: 0 5px 10px rgba(0, 0, 0, .5);
-}

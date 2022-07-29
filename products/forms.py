@@ -30,7 +30,7 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = '__all__'
 
-        # widgets = {
-        #     'user': forms.HiddenInput(),
-        #     'product': forms.HiddenInput()
-        # }
+        widgets = {
+            'user': forms.HiddenInput(),
+            'product': forms.HiddenInput()
+        }

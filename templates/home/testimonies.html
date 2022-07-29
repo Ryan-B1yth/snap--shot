@@ -7,9 +7,9 @@
 {% block content %}
     <img id="hero-image" src="{{ MEDIA_URL }}jonathan-borba-unsplash-hero-image.jpg" alt="Hero image - blurred background containing art supplies">
     
-    <h1 class="center">Leave a review for {{ product }}</h1>
+    <h1 class="center">Publish a testimony.</h1>
     <div class="form-container">
-        <form action="{% url 'review' product.id %}" method="POST">
+        <form action="{% url 'testimony' %}" method="POST">
             {% csrf_token %}
             {{ form.errors }}
             {{ form }}

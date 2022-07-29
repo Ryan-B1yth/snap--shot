@@ -1,0 +1,38 @@
+.welcome-message {
+    background-color: rgba(0, 0, 0, .5);
+    width: max-content;
+    padding: 5em 15em 5em 5em;
+    margin: 5em 0 5em 5%;
+}
+
+.welcome-message h1 {
+    color: var(--clr-background);
+    text-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+}
+
+#testimonies {
+    width: 90%;
+    margin: 0 auto;
+    height: fit-content;
+    background-color: var(--clr-background);
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
+    text-align: center;
+}
+
+#testimonies h2:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#testimonies div {
+    padding-bottom: 1em;
+}
+
+#testimonies > *,
+#content h3 {
+    padding: 1em 0;
+}
+
+#content {
+    padding-top: 4em;
+}

@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
 {% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 {% endblock %}
 
 {% block title %} | Home{% endblock %}
@@ -14,7 +18,23 @@
         <a href="{% url 'products' %}" class="off-center btn-black">Shop now</a>
     </div>
 
+    <div id="testimonies">
+        <h2 class="center">Testimonies</h2>
+        {% if user.is_authenticated %}
+        <div><a href="{% url 'testimony' %}">Have something to say about SnapShot?</a></div>
+        {% endif %}
+        <div id="content">
+            {% for message in testimonies %}
+            <h3 class="center">{{ message.user }}</h3>
+            <p class="center">{{ message.body }}</p>
+        {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block js %}
+
+    <script src="{% static 'js/home.js' %}"></script>
+
 {% endblock %}
