@@ -8,12 +8,19 @@ class ProductForm(forms.ModelForm):
     """ Product form """
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = [
+            'category',
+            'name',
+            'description',
+            'price',
+            'rating',
+            'sizes',
+            'image'
+            ]
 
     image = forms.ImageField(
-        label='',
-        required=False,
-        widget=CustomClearableFileInput
+        label='Image',
+        required=False
         )
 
     def __init__(self, *args, **kwargs):

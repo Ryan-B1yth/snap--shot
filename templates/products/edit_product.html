@@ -9,7 +9,7 @@
 {% block content %}
 {% if user.is_superuser %}
     <h2 class="center">Management</h2>
-    <h3 class="center">Add a product</h3>
+    <h3 class="center">Edit this product</h3>
     <div class="form-container">
         <form action="{% url 'edit_product' product.id %}" method="POST">
             {% csrf_token %}
@@ -30,6 +30,8 @@
 {% endif %}
 {% endblock %}
 
-
 {% block js %}
+
+    <script src="{% static 'js/edit_product.js' %}"></script>
+
 {% endblock %}
