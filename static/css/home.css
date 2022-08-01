@@ -1,6 +1,7 @@
 .welcome-message {
     background-color: rgba(0, 0, 0, .5);
     width: max-content;
+    max-width: 80%;
     padding: 5em 15em 5em 5em;
     margin: 5em 0 5em 5%;
 }
@@ -8,6 +9,7 @@
 .welcome-message h1 {
     color: var(--clr-background);
     text-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+    max-width: 100%;
 }
 
 #testimonies {

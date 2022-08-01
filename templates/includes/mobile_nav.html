@@ -1,0 +1,58 @@
+<div id="mobile">
+    <div class="mobile-logo">
+        <img id="mobile-toggle" src="{{ MEDIA_URL }}mobile-logo.png" alt="SnapShot Logo">
+        <div class="mobile-basket">
+            <a href="{% url 'basket' %}">
+                {% if user.is_authenticated %}
+                    <span>{{ request.user }}</span>
+                {% endif %}
+                <p>
+                    {% if grand_total %}
+                        £{{ grand_total|floatformat:2 }}
+                    {% else %}
+                        £0.00
+                    {% endif %}
+                </p>
+            </a>
+        </div>
+    </div>
+    <div id="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li>
+                    <form action="{% url 'products' %}" method="GET">
+                        <input class="search" type="search" name="q" placeholder="Search...">
+                    </form>
+                </li>
+    
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                        <li><a href="{% url 'add_product' %}">Site management</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'user_profile' %}">Profile</a></li>
+                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'account_login' %}">Login</a></li>
+                    <li><a href="{% url 'account_signup' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <hr>
+        <nav class="mobile-_filters">
+            <div class="mobile-dropdown">
+                <ul>
+                    <li><a href="{% url 'products' %}?sort=price&direction=asc">By price</a></li>
+                    <li><a href="{% url 'products' %}?sort=rating&direction=desc">By rating</a></li>
+                    <li><a href="{% url 'products' %}">All items</a></li>
+                </ul>
+            </div>
+            <div class="mobile-dropdown">
+                <ul>
+                    <li><a href="{% url 'products'%}?category=physical">Physical</a></li>
+                    <li><a href="{% url 'products'%}?category=digital">Digital</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

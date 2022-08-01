@@ -9,7 +9,7 @@
 {% block content %}
 <h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<p class="wrap">{% trans 'Are you sure you want to sign out?' %}</p>
 
 <div class="form-container">
   <form method="post" action="{% url 'account_logout' %}">
