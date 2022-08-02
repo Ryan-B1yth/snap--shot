@@ -56,7 +56,8 @@ p {
 }
 
 .stripe-form-container {
-   width: 100%;
+   width: 350px;
+   max-width: 95vw;
    background-color: var(--clr-background);
    color: var(--clr-secondary);
    border-radius: 50px;

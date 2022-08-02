@@ -15,9 +15,21 @@ h2, h3 {
 .order-summary {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
-.receipt {
+/* .receipt {
     max-height: 300px;
+    min-width: 200px;
+} */
+
+@media screen and (max-width: 721px) {
+    .order-summary {
+        flex-direction: column;
+    }
+
+    .receipt {
+        margin-top: 50px;
+    }
 }

@@ -11,6 +11,6 @@ Name: {{ order.name }}
 Address: {{ order.address_1 }}, {{ order.address_2 }}, {{ order.postcode }}
 Total: £{{ order.order_amount }}
 Delivery: £{{ order.delivery_amount }}
-Grand total: £{{ order.grand_total }}
+Grand total: £{{ order.grand_total|floatformat:2  }}
 
 If you have any problems, questions, or if this wasn't you, please get in touch with us at {{ contact_email }}.
