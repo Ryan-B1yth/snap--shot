@@ -92,7 +92,7 @@ class OrderLineItem(models.Model):
         null=False,
         blank=False
         )
-    product_size = models.CharField(max_length=2, null=True, blank=True)
+    product_size = models.CharField(max_length=6, null=True, blank=True)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         decimal_places=2,

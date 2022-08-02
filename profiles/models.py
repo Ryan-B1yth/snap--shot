@@ -21,9 +21,6 @@ class Profile(models.Model):
     default_address_2 = models.CharField(max_length=50, null=True, blank=True)
     default_postcode = models.CharField(max_length=50, null=True, blank=True)
 
-    def __str__(self):
-        return self.user.name
-
 
 @receiver(post_save, sender=User)
 def create_or_update_profile(sender, instance, created, **kwargs):

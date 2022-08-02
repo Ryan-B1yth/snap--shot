@@ -35,8 +35,8 @@ class OrderAdmin(admin.ModelAdmin):
         'address_1',
         'address_2',
         'county',
-        'delivery',
-        'order_total',
+        'delivery_amount',
+        'order_amount',
         'grand_total',
         'original_basket',
         'stripe_pid'
