@@ -35,6 +35,10 @@
     padding: 1em 0;
 }
 
+#testimonies #content p {
+    margin-bottom: 1em;
+}
+
 #content {
     padding-top: 4em;
 }

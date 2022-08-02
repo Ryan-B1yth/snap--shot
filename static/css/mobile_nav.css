@@ -3,13 +3,6 @@
         display: none;
     }
 
-    hr {
-        width: 70%;
-        align-self: center;
-        margin-left: 50%;
-        transform: translateX(-50%);
-    }
-
     #mobile .mobile-logo {
         display: flex;
         justify-content: space-between;
@@ -45,7 +38,6 @@
     .mobile-_filters .mobile-dropdown ul li {
         margin: 2em 0;
     }
-
 }
 
 @media screen and (min-width: 768px) {

@@ -49,6 +49,13 @@ a:hover {
     text-decoration: underline;
 }
 
+hr {
+    width: 70%;
+    align-self: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
 .center {
     width: max-content;
     margin: 0 auto;

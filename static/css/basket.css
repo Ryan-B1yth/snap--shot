@@ -8,7 +8,7 @@
     flex: 2;
     height: auto;
     padding: 2em;
-    min-width: 400px;
+    /* max-width: 400px; */
 }
 
 .item-row {
@@ -90,6 +90,7 @@
 
     .item-row {
         flex-direction: column;
+        margin: 1em 0;
     }
 
     .receipt {
