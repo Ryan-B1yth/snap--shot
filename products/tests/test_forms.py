@@ -1,7 +1,8 @@
 """ Imports """
 from django.test import TestCase
-from products.forms import ProductForm
-from products.models import Category
+from django.contrib.auth.models import User
+from products.forms import ProductForm, ReviewForm
+from products.models import Category, Review, Product
 
 
 class TestProductForm(TestCase):
@@ -9,9 +10,27 @@ class TestProductForm(TestCase):
 
     def setUp(self):
         """ Set up """
+        self.user = User.objects.create(
+                username="test",
+                password="testpassword"
+            )
+
         self.category = Category.objects.create(
             name='test',
             friendly_name='Test',
+            )
+
+        self.product = Product.objects.create(
+            category=self.category,
+            name='Test',
+            description='test',
+            price='10'
+            )
+
+        self.review = Review.objects.create(
+            user=self.user,
+            text="Test review",
+            product=self.product
         )
 
     def test_empty_form_invalid(self):
@@ -45,3 +64,16 @@ class TestProductForm(TestCase):
             })
         self.assertFalse(form.is_valid())
         self.assertIn('price', form.errors.keys())
+
+    def test_empty_review_form_invalid(self):
+        """ Test empty review form invalid """
+        form = ReviewForm({})
+        self.assertFalse(form.is_valid())
+    
+    def test_review_form_invalid_without_user(self):
+        """ Test review form invalid without user """
+        form = ReviewForm({
+            'user': '',
+            'test': 'Test review',
+            'product': self.product
+        })

@@ -7,6 +7,7 @@ class TestimonyForm(forms.ModelForm):
     """ Testimony form """
 
     class Meta:
+        """ Meta data """
         model = Testimony
         fields = '__all__'
 
