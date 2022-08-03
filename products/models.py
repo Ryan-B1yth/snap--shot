@@ -35,7 +35,6 @@ class Product(models.Model):
         null=True,
         blank=True
         )
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     sizes = models.BooleanField(default=False, null=True, blank=True)
 

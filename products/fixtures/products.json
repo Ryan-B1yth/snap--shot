@@ -8,7 +8,6 @@
         "price": 53.99,
         "category": 1,
         "rating": 4.6,
-        "image_url": "",
         "image": "ancestor.PNG",
         "sizes": "False"
       }
@@ -22,7 +21,6 @@
         "price": 32.50,
         "category": 1,
         "rating": 3.5,
-        "image_url": "",
         "image": "aperture.PNG",
         "sizes": "False"
       }
@@ -36,7 +34,6 @@
         "price": 12.00,
         "category": 1,
         "rating": 4.2,
-        "image_url": "",
         "image": "big-mouth.PNG",
         "sizes": "False"
       }
@@ -50,7 +47,6 @@
         "price": 16.75,
         "category": 2,
         "rating": 3.7,
-        "image_url": "",
         "image": "big-nose.PNG",
         "sizes": "False"
       }
@@ -64,7 +60,6 @@
         "price": 29.99,
         "category": 1,
         "rating": 2.3,
-        "image_url": "",
         "image": "could-be-a-candle-maybe.PNG",
         "sizes": "False"
       }
@@ -78,7 +73,6 @@
         "price": 15,
         "category": 2,
         "rating": 2.1,
-        "image_url": "",
         "image": "cute-and-fluffy.PNG",
         "sizes": "False"
       }
@@ -92,7 +86,6 @@
         "price": 20.00,
         "category": 2,
         "rating": 1.2,
-        "image_url": "",
         "image": "dinner-time.PNG",
         "sizes": "False"
       }
@@ -106,7 +99,6 @@
         "price": 67.89,
         "category": 1,
         "rating": 4.5,
-        "image_url": "",
         "image": "doctor.PNG",
         "sizes": "False"
       }
@@ -120,7 +112,6 @@
         "price": 17.77,
         "category": 2,
         "rating": 4.1,
-        "image_url": "",
         "image": "doorway-to-heaven.PNG",
         "sizes": "False"
       }
@@ -134,7 +125,6 @@
         "price": 16.66,
         "category": 2,
         "rating": 4.1,
-        "image_url": "",
         "image": "doorway-to-hell.PNG",
         "sizes": "False"
       }
