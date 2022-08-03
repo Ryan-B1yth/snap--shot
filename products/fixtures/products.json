@@ -24,7 +24,7 @@
         "rating": 3.5,
         "image_url": "",
         "image": "aperture.PNG",
-        "sizes": "True"
+        "sizes": "False"
       }
     },
     {
@@ -52,7 +52,7 @@
         "rating": 3.7,
         "image_url": "",
         "image": "big-nose.PNG",
-        "sizes": "True"
+        "sizes": "False"
       }
     },
     {
@@ -80,7 +80,7 @@
         "rating": 2.1,
         "image_url": "",
         "image": "cute-and-fluffy.PNG",
-        "sizes": "True"
+        "sizes": "False"
       }
     },
     {
@@ -94,7 +94,7 @@
         "rating": 1.2,
         "image_url": "",
         "image": "dinner-time.PNG",
-        "sizes": "True"
+        "sizes": "False"
       }
     },
     {

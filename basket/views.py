@@ -1,5 +1,11 @@
 """ Imports """
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    HttpResponse,
+    get_object_or_404
+    )
 from django.contrib import messages
 from products.models import Product
 
@@ -12,7 +18,7 @@ def basket_view(request):
 def add_to_basket(request, product_id):
     """ Add quantities to basket """
 
-    product = Product.objects.get(pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
