@@ -6,8 +6,8 @@ $('.increment').click(function(e) {
    var itemId = $(this).data('item_id');
 
     isNaN(currentValue) || currentValue >= 99 ? 
-        $('.quantity').val(99) : 
-        $('.quantity').val(currentValue + 1);
+        $(closestInput).val(99) : 
+        $(closestInput).val(currentValue + 1);
 });
 
 $('.decrement').click(function(e) {
@@ -18,6 +18,6 @@ $('.decrement').click(function(e) {
    var itemId = $(this).data('item_id');
 
     isNaN(currentValue) || currentValue <= 0 ? 
-        $('.quantity').val(0) : 
-        $('.quantity').val(currentValue - 1);
+       $(closestInput).val(0) : 
+       $(closestInput).val(currentValue - 1);
 });
