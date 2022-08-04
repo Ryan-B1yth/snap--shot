@@ -11,7 +11,7 @@
 {% block title %} | Basket{% endblock %}
 
 {% block content %}
-    <section class="basket-body">
+    <div class="basket-body">
         {% if basket_items %}
             <div class="item-list">
                 {% for item in basket_items %}
@@ -50,10 +50,10 @@
             </div>
             
         {% else %}
-        <div class="empty-basket">
-            <p class="wrap">You haven't added anything yet!</p>
-            <a class="btn-black center" href="{% url 'products' %}">Go shopping!</a>
-        </div>
+            <div class="empty-basket">
+                <p class="wrap">You haven't added anything yet!</p>
+                <a class="btn-black center" href="{% url 'products' %}">Go shopping!</a>
+            </div>
         {% endif %}
         
         <div class="receipt">
@@ -63,11 +63,13 @@
                 <p>Total: £{{ grand_total|floatformat:2 }}</p>
             </div>
             <div class="call-to-action">
-                <a class="btn-black" href="{% url 'checkout' %}">Go to checkout</a>
+                {% if basket_items %}
+                    <a class="btn-black" href="{% url 'checkout' %}">Go to checkout</a>
+                {% endif %}
                 <a href="{% url 'products' %}">Keep shopping</a>
             </div>
         </div>
-    </section>
+    </div>
 {% endblock %}
 
 {% block js %}
