@@ -1,3 +1,3 @@
 $('#toast-dismiss').click( () => {
-    $('#toast').slideToggle()
-})
+    $('#toast').slideToggle();
+});

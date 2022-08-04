@@ -1,1 +1,1 @@
-$('#image-clear_id').parent().toggle()
+$('#image-clear_id').parent().toggle();

@@ -16,6 +16,5 @@ $('#sort-selector').change( function() {
         currentUrl.searchParams.delete('direction');
 
         window.location.replace(currentUrl);
-
     }
 });

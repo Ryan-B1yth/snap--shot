@@ -64,21 +64,36 @@
 
   - products.css
 
-  ![Styles CSS](static/assets/documentation/images/products_css_validation.png)
+  ![Products CSS](static/assets/documentation/images/products_css_validation.png)
   
   - product_detail.css
 
-  ![Styles CSS](static/assets/documentation/images/product_detail_css_validation.png)
+  ![Product Detail CSS](static/assets/documentation/images/product_detail_css_validation.png)
 
   - product_review.css
 
-  ![Styles CSS](static/assets/documentation/images/product_review_css_validation.png)
+  ![Product Review CSS](static/assets/documentation/images/product_review_css_validation.png)
 
   - testimonies.css
 
-  ![Styles CSS](static/assets/documentation/images/testimonies_css_validation.png)
+  ![Testimonies CSS](static/assets/documentation/images/testimonies_css_validation.png)
      
 ### [JSHint JavaScript Validator](https://jshint.com/) 
+
+- The JavaScript in this project was separted into very small files for their respective pages containing perhaps a single function. The largest three files with complex functionality are shown below.
+
+  - Products
+
+  ![Products JS](static/assets/documentation/images/products_js_validation.png)
+
+  - Product detail
+
+  ![Product detail JS](static/assets/documentation/images/product_detail_js_validation.png)
+
+  - Stripe
+
+  ![Stripe elements JS](static/assets/documentation/images/stripe_elements_js_validation.png)
+
     
 ### [PEP8 Validator](http://pep8online.com/)
 

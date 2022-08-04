@@ -1,5 +1,5 @@
-$('#content').slideToggle()
+$('#content').slideToggle();
 
 $('#testimonies').click( () => {
-    $('#content').slideToggle()
-})
+    $('#content').slideToggle();
+});
