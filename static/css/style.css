@@ -59,6 +59,7 @@ hr {
 .center {
     width: max-content;
     margin: 0 auto;
+    padding: 1em 0;
 }
 
 .logo {
@@ -156,11 +157,6 @@ p {
     bottom: 30px;
 }
 
-.center {
-    width: max-content;
-    margin: 0 auto;
-}
-
 .search {
     padding: .5em;
     width: 15em;
@@ -177,7 +173,7 @@ p {
 }
 
 .white-text-shadow {
-    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 5px 10px var(--clr-background);
 }
 
 ._filters {

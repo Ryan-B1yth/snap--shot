@@ -12,6 +12,7 @@
 {% block content %}
     <img id="hero-image" src="{{ MEDIA_URL }}jonathan-borba-unsplash-hero-image.jpg" alt="Hero image - blurred background containing art supplies">
     {% if user.is_authenticated %}
+    <h1 class="white-text-shadow center">Update your information.</h1>
         <div class="form-container">
             <form method="POST">
                 {% csrf_token %}
@@ -24,7 +25,7 @@
         <div class="order-history">
             <h2 class="center">Order history</h2>
             {% if orders %}
-                {% for order in orders %}
+                {% for order in orders reversed %}
                     <h3 class="center">{{ order.order_no|truncatechars:10 }}</h3>
                     <p>{{ order.date }}</p>
                     <ul>
