@@ -249,4 +249,4 @@
 
 ## Bugs
 
-  
+- Screen sizes of exactly 768px wide will experience an issue where the header completely disappears and is not reachable from anywhere on the site. This bug is strange as practices for responsove design used in previous projects that don't cause this issue were used here so why this happens is unclear. The switch between the desktop header and the mobile header happens at a screen width of 768px, meaning that above the limit, the desktop header should display, and anything at or below the limit should trigger the mobile header. This bug couldn't be fixed by changing the limits as either neither header would show up for multiple pixel widths, or both of them would.

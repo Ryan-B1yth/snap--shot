@@ -15,7 +15,7 @@ SnapShot is an E-commerce store where users can browse and search for art, both 
 You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
 
-![4 screen sizes image of the site]()
+![4 screen sizes image of the site](static/assets/documentation/images/4_sizes.PNG)
 
 ## Contents 
 

@@ -38,3 +38,8 @@ def create_testimony(request):
     }
 
     return render(request, 'home/testimonies.html', context)
+
+
+def privacy_policy(request):
+    """ Privacy policy view """
+    return render(request, 'privacy/privacy-policy.html', {})
