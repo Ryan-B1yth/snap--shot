@@ -11,6 +11,7 @@ from profiles.models import Profile
 
 
 class StripeWebhookHandler:
+    """ Stripe webhook handler """
     def __init__(self, request):
         self.request = request
 
@@ -33,12 +34,14 @@ class StripeWebhookHandler:
             )
 
     def handle_event(self, event):
+        """ Handle event """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200
         )
 
     def handle_payment_intent_succeeded(self, event):
+        """ Handle payment intent succeeded """
         intent = event.data.object
         pid = intent.id
         basket = intent.metadata.basket
