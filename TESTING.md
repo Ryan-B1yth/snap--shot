@@ -120,16 +120,41 @@
   ![Stripe webhooks](static/assets/documentation/images/stripe_py_validation.png)
 
 
-- Lighthouse Scores
-  
+### Lighthouse Scores
+
+- The lighthouse scores below show some of the best and worst scores various pages on the site receive in both desktop view and mobile view. Not all are shown but all were tested and all scored within similar ranges.
+
   - Home page
+
+    - Desktop
+  ![Lighthouse home](static/assets/documentation/images/lighthouse_home.png)
+
+    - Mobile
+  ![Lighthouse home mobile](static/assets/documentation/images/lighthouse_home_mobile.png)
 
   - Product page
 
+    - Desktop
+  ![Lighthouse products](static/assets/documentation/images/lighthouse_products.png)
+
+    - Mobile
+  ![Lighthouse home mobile](static/assets/documentation/images/lighthouse_products_mobile.png)
+  
   - Product detail page
 
+    - Desktop
+  ![Lighthouse product detail](static/assets/documentation/images/lighthouse_product_detail.png)
+
+    - Mobile
+  ![Lighthouse home mobile](static/assets/documentation/images/lighthouse_product_detail_mobile.png)
+  
   - Form pages
 
+    - Desktop
+  ![Lighthouse form](static/assets/documentation/images/lighthouse_form.png)
+
+    - Mobile
+  ![Lighthouse home mobile](static/assets/documentation/images/lighthouse_form_mobile.png)
     
 ## Unit Testing 
   - Automated testing was done for some of the project. Forms, models, and views were tested in each app that used a significant amount of code in these files. 
