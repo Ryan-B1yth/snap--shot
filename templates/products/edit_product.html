@@ -7,27 +7,28 @@
 {% block title %} | Edit prodct{% endblock %}
 
 {% block content %}
-{% if user.is_superuser %}
-    <h2 class="center">Management</h2>
-    <h3 class="center">Edit this product</h3>
-    <div class="form-container">
-        <form action="{% url 'edit_product' product.id %}" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn-black" type="submit">Update</button>
-            <a href="{% url 'delete_product' product.id %}">Delete</a>
-            <a href="{% url 'products' %}">Cancel</a>
-        </form>
-    </div>
-    
-{% else %}
+    {% if user.is_superuser %}
+        <h2 class="center">Management</h2>
+        <h3 class="center">Edit this product</h3>
+        <div class="form-container">
+            <form action="{% url 'edit_product' product.id %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn-black" type="submit">Update</button>
+                <a href="{% url 'delete_product' product.id %}">Delete</a>
+                <a href="{% url 'products' %}">Cancel</a>
+            </form>
+        </div>
+        
+    {% else %}
 
-    <div class="restricted">
-        <h2>You do not have access to this page.</h2>
-        <h3><a href="{% url 'products' %}">Go back</a></h3>
-    </div>
+        <div class="form-container">
+            <h1 class="center">You do not have access to this page.</h1>
+            <a class="btn-black" href="{% url 'products' %}">Go back</a>
+        </div>
 
-{% endif %}
+    {% endif %}
+
 {% endblock %}
 
 {% block js %}

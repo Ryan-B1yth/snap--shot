@@ -165,7 +165,74 @@
 
 ## Testing User Stories 
 
-<!-- Using excel spreadsheet numbers, input screenshots of each repective page -->
+ - #### Unregistered Visitor
+     - As an unregistered user, I want to be able to: 
+        - View all products so that I can select items to purchase.
+        ![View all products](static/assets/documentation/images/view_all_products.png)
+          - Users can view all products by clicking All Items.
+        - View a selection of products by category so that I can narrow my search by type.
+        ![View some products](static/assets/documentation/images/view_some_products.png)
+          - Users have two categories to choose from; Physical and Digital.
+        - See all a product's detail so that I can find the price and read the description of a product.
+        ![View product detail](static/assets/documentation/images/view_product_detail.png)
+          - Clicking See More will take you to the product detail page.
+        - Search for specific products so that I can find exactly what I am looking for.
+        ![Search products](static/assets/documentation/images/search_products.png)
+          - The search bar is fully functional and searches names and descriptions.
+        - Filter by rating and price so that I can shop for the best items.
+        ![Filter by price](static/assets/documentation/images/filter_price.png)
+        ![Filter by price](static/assets/documentation/images/filter_rating.png)
+          - Users can filter by price and rating by clicking either link.
+
+
+   - #### First Time Visitor (in addition to above)
+     - As a first time user, I want to be able to:
+       - Navigate the site easily and intuitively.
+       - Find what I am looking for easily.
+        ![Mobile navigation](static/assets/documentation/images/mobile_nav.png)
+        ![Desktop navigation](static/assets/documentation/images/desktop_nav.png)
+          - The navigation is always right at the top of the screen and is displayed as a user would expect.
+       - Keep track of my basket total so I do not overspend.
+        ![Basket](static/assets/documentation/images/basket.png)
+          - The basket total is always in the top right and clicking it will take you to the basket page where the total is split into the item's total and delivery if applicable.
+       - Add and remove item's from my basket so I can make sure I have the correct items, and quantities.
+        ![Adjust basket](static/assets/documentation/images/adjust_basket.png)
+          - Users can add and remove items from the basket using either the plus and minus buttons and clicking Update, or hitting Remove which removes all items of that type from the basket.
+       - Checkout easily and be sent confirmation of my purchase to my email.
+        ![Checkout](static/assets/documentation/images/checkout.png)
+        ![Confirmation email](static/assets/documentation/images/confirmation_email.png)
+          - Checking out is just one form that vanishes when submitted to prevent users from attempting to do so multiple times. A confirmation email is sent with the order number and a run down of what they bought.
+
+
+   - #### Registered Returning Visitor Goals
+     - As a registered user, I want to be able to:
+       - Save my checkout information so I can purchase items easier the next time I visit the site.
+        ![Save information](static/assets/documentation/images/save_info.png)
+          - Information at checkout can be saved by checking the box.
+       - Sign up to a news letter so that I can be told about special offers and savings.
+        ![News letter](static/assets/documentation/images/news_letter.png)
+          - The site provides a form for a news letter service provided by Mail Chimp.
+       - Update my information when it changes so that my items are aways delivered to the correct address.
+        ![Update information](static/assets/documentation/images/update_info.png)
+          - Navigating to profile from the top of the page or the dropdown menu will take a user to the profile page where their information can be changed at any time.
+       - Recieve an email to verify my registration so that I can be sure I have an account.
+        ![Verify email](static/assets/documentation/images/verify_email.png)
+        ![Verification toast](static/assets/documentation/images/verify_toast.png)
+          - An email is sent to a users inputted email for verification and the user is told this on the page and in a helpful pop-up in the top right corner.
+       - Change and recover my password so I do not have to create a new account if I forget it.
+        ![Forgot password](static/assets/documentation/images/forgot_pass.png)
+        ![Change password](static/assets/documentation/images/change_pass.png)
+          - Users have the option to change their password on the profile page, and can recover their password on the login page by submitting their email and following the instructions.
+       - Access a profile so that I can view my order history, confirmations, and payment information.
+        ![Order history](static/assets/documentation/images/order_history.png)
+          - The user profile displays all confirmed orders with their order number, totals, and contents.
+
+   - #### Superuser goals
+     - As a superuser / admin, I want to be able to:
+       - Add, edit, and remove items from the site so that I can sell more products and remove the products that are not being sold to improve revenue.
+        ![Add product](static/assets/documentation/images/add_product.png)
+        ![Edit product](static/assets/documentation/images/edit_product.png)
+          - Superusers / admin have full CRUD control of the site. These pages can only be accessed by superusers.
       
 ## Manual Testing
 
