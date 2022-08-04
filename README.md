@@ -61,7 +61,7 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
      - As an unregistered user, I want to be able to: 
         - View all products so that I can select items to purchase.
         - View a selection of products by category so that I can narrow my search by type.
-        - See all a product's detail so that I can find the price, select a size, and read the description of a product.
+        - See all a product's detail so that I can find the price and read the description of a product.
         - Search for specific products so that I can find exactly what I am looking for.
         - Filter by rating and price so that I can shop for the best items.
 
@@ -71,7 +71,7 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
        - Navigate the site easily and intuitively.
        - Find what I am looking for easily. 
        - Keep track of my basket total so I do not overspend.
-       - Add and remove item's from my basket so I can make sure I have the correct items, sizes, and quantities.
+       - Add and remove item's from my basket so I can make sure I have the correct items, and quantities.
        - Checkout easily and be sent confirmation of my purchase to my email.
 
 
@@ -130,9 +130,9 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
 #### Product
 
-| category | name | description | price | rating | image_url | image | sizes | 
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ForeignKey(Category) | CharField | TextArea | DecimalField | DecimalField | URLField | ImageField | BooleanField |
+| category | name | description | price | rating | image | sizes | 
+| --- | --- | --- | --- | --- | --- | --- |
+| ForeignKey(Category) | CharField | TextArea | DecimalField | DecimalField | ImageField | BooleanField |
 
 #### Review
 
@@ -172,7 +172,7 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
 ### Design Choices
 
-- As the site "sells" artwork of varying types, I wanted these to be "center stage" for the majority of the user interaction process. A plain white background allows for the image to be shown without having to fight to be seen amongst other colors or images on the screen resulting in bad contrast. Hovering on a product card momentarily zooms in the image to give the user an imediate response to their action. Clicking the card will then take them to the product page where they can choose quantity and sizes should the product have them. 
+- As the site "sells" artwork of varying types, I wanted these to be "center stage" for the majority of the user interaction process. A plain white background allows for the image to be shown without having to fight to be seen amongst other colors or images on the screen resulting in bad contrast. Hovering on a product card momentarily zooms in the image to give the user an imediate response to their action. Clicking the card will then take them to the product page where they can choose the quantity they'd like.
 
 - There are two nav-bars at the top of the screen. The main nav-bar give the user the ability to search for products at a click; by filters or by category. The other nav-bar contains link to user profile actions: login / logout, register, and a link to the user profile.
 
@@ -208,7 +208,10 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
 ## Challenges 
 
-- Days before this project was due for submission, the login / registration pages started throwing 500 Internal Server Errors, as well as the Django admin panel should you try to update the user model. After multiple days of attempting to debug, it turned out to be an error with the email handling functionality. After resetting the email host password, the errors were no longer being thrown. Still unsure, however, as to why this error presented itself days after the functionality was originally implemented.
+- Days before this project was due for submission, the login / registration pages started throwing 500 Internal Server Errors, as well as the Django admin panel should you try to update the user model. After multiple days of attempting to debug, it turned out to be an error with the email handling functionality. After resetting the email host password, the errors were no longer being thrown. Still unsure, however, as to why this error presented itself days after the functionality was originally implemented and seen to be working.
+
+- Another bug that was only caught before submission of the project was an error with the size field of the Products model. Again, after some debugging it was and error with the basket view where multiple sizes of the same product could not exist within the basket. After many revisions and comparing code with the Boutique Ado project and other Code Institute student's code - and what wth the submission deadline being days away - the size functionality was judged to be removed. The field was set to default to False in the model and the products were updated so that the sizes were no longer an option. This bypasses where the bug was being thrown in the code, however the code itself has not ben removed. As various other sections of this project required finishing, it was added to the end of the TODO list, should there be time to remove it. As there is not enough time for this fix to be properly implemented without fear of breaking the project in multiple places, the code remains. <br> 
+It is understood that this is not the best development practice, as any non-functional code should be removed from the production environment and subsequently the deployed version of the project. Had this been a project undertaken by a company for a client, the fixing / removal of this code would be considered top priority in the next iteration of the project. The inclusion of the code in the final build then, in my opinion, allows for a headstart in resolving this issue when the next iteration begins - so that the functionality is not completely lost from the site.
 
 ## Testing
 
@@ -382,9 +385,6 @@ Testing and results can be found [here](TESTING.md)
 
 ## Credits
 
-- [Memory Box](https://memory-box.co.uk/blog/picture-frame-size-guide/) for providing a display of the relative image sizes.
-
-
 ### Code
 
 - All code was written by the developer with help from Code Institute and specifically their [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/250e2c2b8e43cccb56b4721cd8a8bd4de6686546) project.
@@ -398,6 +398,8 @@ Testing and results can be found [here](TESTING.md)
 ### Media
 
 - All images used in this project were generated by [DALLE](https://huggingface.co/spaces/dalle-mini/dalle-mini) except for the "No Image" image which was created by [愚木混株 cdd20](https://unsplash.com/@cdd20), and the hero image created by [Jonathan Borba](https://unsplash.com/@jonathanborba).
+
+- Although not used anywhere in the project, credit is given to [Memory Box](https://memory-box.co.uk/blog/picture-frame-size-guide/) for providing a display of the relative image sizes used in production.
  
 ### Acknowledgements
 
