@@ -54,11 +54,33 @@
     ![HTML Checkout](static/assets/documentation/images/html_validation_text_input.png)
 
 
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
+### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
+
+- Again, below are the results for some of the larger, more complex CSS file.
+
+  - styles.css
+
+  ![Styles CSS](static/assets/documentation/images/styles_css_validation.png)
+
+  - products.css
+
+  ![Styles CSS](static/assets/documentation/images/products_css_validation.png)
+  
+  - product_detail.css
+
+  ![Styles CSS](static/assets/documentation/images/product_detail_css_validation.png)
+
+  - product_review.css
+
+  ![Styles CSS](static/assets/documentation/images/product_review_css_validation.png)
+
+  - testimonies.css
+
+  ![Styles CSS](static/assets/documentation/images/testimonies_css_validation.png)
      
-- [JSHint JavaScript Validator](https://jshint.com/) 
+### [JSHint JavaScript Validator](https://jshint.com/) 
     
-- [PEP8 Validator](http://pep8online.com/)
+### [PEP8 Validator](http://pep8online.com/)
 
 - Lighthouse Scores
   
