@@ -17,7 +17,42 @@
 
 - Every file in this project was subjected to its file type's respective validator and passed 100% as seen below. Not all results are displayed as many of them look exactly the same however I have picked the files with the largest / more complex code base to demonstrate their results. 
 
-- [W3C Markup Validator](https://validator.w3.org/) 
+### [W3C Markup Validator](https://validator.w3.org/) 
+
+- Below are the results for the main pages of the site. The home page, products page, product detail page, product edit page, and profile page were chosen to display the main functional pages of the site. The final image is a screenshot of all the errors the validator threw for the checkout page. This is there to show the only errors that were being thrown when pages had to be tested through direct text input.
+
+  - Validation before
+
+    ![HTML Validation Before](static/assets/documentation/images/html_validation_before.png)
+
+  - Validation after
+
+    ![HTML Validation After](static/assets/documentation/images/html_validation_after.png)
+
+  - Products before
+
+    ![HTML VProducts before](static/assets/documentation/images/html_validation_products_before.png)
+  
+  - Products after 
+
+    ![HTML PProducts after ](static/assets/documentation/images/html_validation_products_after.png)
+
+  - Product detail 
+
+    ![HTML Product detail](static/assets/documentation/images/html_validation_product_detail.png)
+
+  - Product edit
+
+    ![HTML Product edit](static/assets/documentation/images/html_validation_product_edit.png)
+
+  - Profile
+
+    ![HTML Profile](static/assets/documentation/images/html_validation_profile.png)
+  
+  - Checkout 
+
+    ![HTML Checkout](static/assets/documentation/images/html_validation_text_input.png)
+
 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
      
