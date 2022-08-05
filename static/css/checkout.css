@@ -19,11 +19,6 @@ h2, h3 {
     flex-direction: row;
 }
 
-/* .receipt {
-    max-height: 300px;
-    min-width: 200px;
-} */
-
 @media screen and (max-width: 721px) {
     .order-summary {
         flex-direction: column;

@@ -43,20 +43,20 @@
                 </div>
                 <div class="add-to-basket">
                     {% if product.sizes %}
-                    <select class="select" name="product_size" id="product_size">
-                        <option value="4x6">4x6</option>
-                        <option value="5x7">5x7</option>
-                        <option value="6x8">6x8</option>
-                        <option value="8x8">8x8</option>
-                        <option value="5x10">5x10</option>
-                        <option value="8x10">8x10</option>
-                        <option value="10x12">10x12</option>
-                        <option value="11x14">11x14</option>
-                        <option value="12x15">12x15</option>
-                        <option value="16x20">16x20</option>
-                        <option value="20x24">20x24</option>
-                    </select>
-                {% endif %}
+                        <select class="select" name="product_size" id="product_size">
+                            <option value="4x6">4x6</option>
+                            <option value="5x7">5x7</option>
+                            <option value="6x8">6x8</option>
+                            <option value="8x8">8x8</option>
+                            <option value="5x10">5x10</option>
+                            <option value="8x10">8x10</option>
+                            <option value="10x12">10x12</option>
+                            <option value="11x14">11x14</option>
+                            <option value="12x15">12x15</option>
+                            <option value="16x20">16x20</option>
+                            <option value="20x24">20x24</option>
+                        </select>
+                    {% endif %}
                 <input type="submit" class="btn-black" value="Add to basket">
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
@@ -66,7 +66,6 @@
                 {% endif %}
             </form>
             <div class="keep-shopping"><a href="{% url 'products' %}">Keep shopping</a></div>
-
 
         </div>
         <div class="item-extra-info shadow">

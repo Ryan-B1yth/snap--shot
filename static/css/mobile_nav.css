@@ -22,16 +22,11 @@
         background-color: var(--clr-background);
         z-index: 9998;
         margin-bottom: 20px;
-        /* position: absolute; 
-        top: 0; */
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
-
         box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, .5);
-
     }
 
     .mobile-nav ul li,

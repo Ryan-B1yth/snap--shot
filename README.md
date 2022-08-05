@@ -60,7 +60,6 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
    * [Media](#media)
    * [Acknowledgements](#acknowledgements)
 
-
 ## User Experience / Interaction (UX / UI)
 
    ### User Stories
@@ -73,7 +72,6 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
         - Search for specific products so that I can find exactly what I am looking for.
         - Filter by rating and price so that I can shop for the best items.
 
-
    - #### First Time Visitor (in addition to above)
      - As a first time user, I want to be able to:
        - Navigate the site easily and intuitively.
@@ -81,7 +79,6 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
        - Keep track of my basket total so I do not overspend.
        - Add and remove item's from my basket so I can make sure I have the correct items, and quantities.
        - Checkout easily and be sent confirmation of my purchase to my email.
-
 
    - #### Registered Returning Visitor Goals
      - As a registered user, I want to be able to:
@@ -234,7 +231,6 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
 ### Color Scheme
     
 - The color scheme follows a similar color scheme to an earlier project of mine: Be Mindful. A simplistic off-white and grey color scheme with just the pops of color from the images used for the products accent the interactable portions of the site. The product detail pages have the product image as a blurred backdrop to darken the page slightly which emphasizes the white boxes that contain the product information. 
-
         
 ### Typography
 
@@ -286,8 +282,8 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
 
 - Days before this project was due for submission, the login / registration pages started throwing 500 Internal Server Errors, as well as the Django admin panel should you try to update the user model. After multiple days of attempting to debug, it turned out to be an error with the email handling functionality. After resetting the email host password, the errors were no longer being thrown. Still unsure, however, as to why this error presented itself days after the functionality was originally implemented and seen to be working.
 
-- Another bug that was only caught before submission of the project was an error with the size field of the Products model. Again, after some debugging it was and error with the basket view where multiple sizes of the same product could not exist within the basket. After many revisions and comparing code with the Boutique Ado project and other Code Institute student's code - and what wth the submission deadline being days away - the size functionality was judged to be removed. The field was set to default to False in the model and the products were updated so that the sizes were no longer an option. This bypasses where the bug was being thrown in the code, however the code itself has not ben removed. As various other sections of this project required finishing, it was added to the end of the TODO list, should there be time to remove it. As there is not enough time for this fix to be properly implemented without fear of breaking the project in multiple places, the code remains. <br> 
-It is understood that this is not the best development practice, as any non-functional code should be removed from the production environment and subsequently the deployed version of the project. Had this been a project undertaken by a company for a client, the fixing / removal of this code would be considered top priority in the next iteration of the project. The inclusion of the code in the final build then, in my opinion, allows for a headstart in resolving this issue when the next iteration begins - so that the functionality is not completely lost from the site.
+- Another bug that was only caught days before submission of the project was an error with the size field of the Products model. Again, after some debugging it was and error with the basket view where multiple sizes of the same product could not exist within the basket. After many revisions and comparing code with the Boutique Ado project and other Code Institute student's code - and what wth the submission deadline being days away - the size functionality was judged to be removed. The field was set to default to False in the model and the products were updated so that the sizes were no longer an option. This bypasses where the bug was being thrown in the code, however the code itself has not ben removed. As various other sections of this project required finishing, it was added to the end of the TODO list, should there be time to remove it. As there is not enough time for this fix to be properly implemented without fear of breaking the project in multiple places, the code remains. <br> 
+It is understood that this is not the best development practice, as any non-functional code should be removed from the production environment and subsequently the deployed version of the project. Had this been a project undertaken by a company for a client, the fixing / removal of this code would be considered top priority in the next iteration of the project, after the deadline. The inclusion of the code in the final build then, in my opinion, allows for a headstart in resolving this issue when the next iteration begins - so that the functionality is not completely lost from the site.
 
 ## Testing
 
@@ -434,7 +430,6 @@ Testing and results can be found [here](TESTING.md)
   - Inside the Webhook, you can reveal the "Signing Secret", copy it and paste it as a variable in your chosen location as described above. 
     - If you have a development project and a deployed project, you will have two different keys. In this scenario, in the project repo create the env.py file **(Not forgetting to add it to the .gitignore)**, paste the local host Signing Secret key here, and paste the deployed URL's Signing Secret into the Heroku config vars. 
 
-
 - ### Heroku deployment
   
   - Create a Heroku account [here](https://www.heroku.com).
@@ -457,7 +452,6 @@ Testing and results can be found [here](TESTING.md)
   - Login to Heroku on the command line using ``` heroku login -i ```, you will be prompted for your username and password. 
   - Connect to your project using ``` heroku git:remote -a <your app name> ```
   - Push all the code to Heroku using ``` git push heroku main ```. This step may take a while for the first deployment but when its done it'll give a link to the deployed site.
-
 
 ## Credits
 

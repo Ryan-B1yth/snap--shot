@@ -37,46 +37,43 @@
                 </div>
                 <button class="btn-black" id="submit-button">Complete order</button>
             </form>
-            
         </div>
-        
     </div>
     <h3>Order summary ({{ product_count }})</h3>
     <div class="order-summary">
-            {% if basket_items %}
-                <div class="item-list">
-                    {% for item in basket_items %}
-                        <div class="item-row">
-                            <div class="item-image">
-                                {% if item.product.image %}
-                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                {% else %}
-                                    <img src="{{ MEDIA_URL }}no-image.jpg" alt="No image available">
-                                {% endif %}
-                            </div>
-                            <div class="item-name">
-                                {{ item.product.name }}{% if item.size %}: {{ item.size }}{% endif %}
-                            </div>
-                            <div class="item-quantity">
-                                <div class="quantity-change">
-                                    <p id="quantity" class="">{{ item.quantity }}</p>
-                                </div>
-                            </div>
-                            <div class="total-price">
-                                {{ item.product.price | calc_subtotal:item.quantity }}
+        {% if basket_items %}
+            <div class="item-list">
+                {% for item in basket_items %}
+                    <div class="item-row">
+                        <div class="item-image">
+                            {% if item.product.image %}
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            {% else %}
+                                <img src="{{ MEDIA_URL }}no-image.jpg" alt="No image available">
+                            {% endif %}
+                        </div>
+                        <div class="item-name">
+                            {{ item.product.name }}{% if item.size %}: {{ item.size }}{% endif %}
+                        </div>
+                        <div class="item-quantity">
+                            <div class="quantity-change">
+                                <p id="quantity" class="">{{ item.quantity }}</p>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
-                <div class="receipt">
-                    <p>Total: £{{ total|floatformat:2 }}</p>
-                    <p>Delivery: £{{ delivery|floatformat:2 }}</p>
-                    <p>Grand total: £{{ grand_total|floatformat:2 }}</p>
-                </div>
-            {% endif %}
+                        <div class="total-price">
+                            {{ item.product.price | calc_subtotal:item.quantity }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="receipt">
+                <p>Total: £{{ total|floatformat:2 }}</p>
+                <p>Delivery: £{{ delivery|floatformat:2 }}</p>
+                <p>Grand total: £{{ grand_total|floatformat:2 }}</p>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
-
 
 {% block js %}
 
