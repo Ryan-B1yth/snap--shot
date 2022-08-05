@@ -154,6 +154,39 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
 ### WireFrames 
 
+- Home page
+
+![Home page wireframe](static/assets/documentation/images/wireframe_home.png)
+
+- Products page
+
+![Products page wireframe](static/assets/documentation/images/wireframe_products.png)
+
+- Product detail page
+
+![Product detail page wireframe](static/assets/documentation/images/wireframe_product_detail.png)
+
+- Basket page
+
+![Basket page wireframe](static/assets/documentation/images/wireframe_basket.png)
+
+- Checkout page
+
+![Checkout page wireframe](static/assets/documentation/images/wireframe_checkout.png)
+
+- Form pages 
+
+![Form page wireframe](static/assets/documentation/images/wireframe_form.png)
+
+- Mobile view (Product detail)
+
+![Mobile product detail page wireframe](static/assets/documentation/images/wireframe_mobile_product_detail.png)
+
+- Mobile header expanded 
+
+![Mobile header expanded wireframe](static/assets/documentation/images/wireframe_mobile_expanded.png)
+
+
 
 ### Color Scheme
     
