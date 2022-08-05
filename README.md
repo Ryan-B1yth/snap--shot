@@ -14,6 +14,12 @@ SnapShot is an E-commerce store where users can browse and search for art, both 
 
 You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
+***
+SnapShot is a Business to Client (B2C) business model site in which the owner of the site sells products directly to clents rather than to other businesses. An E-Commerce site such as SnapShot will then also advertise to clients directly in as many places as possible, including social media sites such as [Facebook](https://en-gb.facebook.com/) (Meta). Below are examples of a business page a company such as SnapShot could create for promoting their business:
+
+![Facebook desktop page](static/assets/documentation/images/fb_desktop_mockup.png)
+![Facebook mobile page](static/assets/documentation/images/fb_mobile_mockup.png)
+![Facebook business owner page](static/assets/documentation/images/fb_page_creator_view.png)
 
 ![4 screen sizes image of the site](static/assets/documentation/images/4_sizes.PNG)
 
@@ -91,7 +97,6 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 - A list of user stories used in production can be seen below:
 
 ![User Stories](static/assets/documentation/images/user-stories.PNG)
-
 
    ### Current features 
 
@@ -186,8 +191,6 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
 ![Mobile header expanded wireframe](static/assets/documentation/images/wireframe_mobile_expanded.png)
 
-
-
 ### Color Scheme
     
 - The color scheme follows a similar color scheme to an earlier project of mine: Be Mindful. A simplistic off-white and grey color scheme with just the pops of color from the images used for the products accent the interactable portions of the site. The product detail pages have the product image as a blurred backdrop to darken the page slightly which emphasizes the white boxes that contain the product information. 
@@ -229,7 +232,7 @@ You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 - [Git](https://git-scm.com/)
 - [GitHub](https://github.com/)
 - [Gitpod](https://www.gitpod.io/)
-- [Am I responsive](http://ami.responsivedesign.is/)
+- [Am I responsive](https://amiresponsive.co.uk/)
 - [Chrome devtools](https://developer.chrome.com/docs/devtools/)
 - [jQuery](https://jquery.com/)
 - [Heroku](https://dashboard.heroku.com/apps)
