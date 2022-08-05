@@ -14,7 +14,43 @@ SnapShot is an E-commerce store where users can browse and search for art, both 
 
 You can view the live project [here](https://snap-shot-store.herokuapp.com/).
 
-***
+## Contents 
+
+- [Business model](#business-model)
+- [User Experience (UX)](#user-experience-ux)
+  - [User Stories](#user-stories) 
+    - [Current Features](#current-features)
+    - [Features to implement in the future](#future-features)
+  - [Structure](#structure)
+    - [File structure](#file-structure)
+    - [Models](#models)
+  - [Wireframes](#wireframes)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Imagery](#imagery)
+  - [Design Choices](#design-choices)
+- [Technologies](#technologies)
+  - [Languages used](#languages-used)
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
+- [Challenges](#challenges)
+- [Testing](#testing)
+- [Deployment](#deployment)
+  - [Creation](#creation)
+  - [Forking](#forking)
+  - [Clone](#clone)
+  - [Setting up AWS](#setting-up-aws)
+  - [Setting Up Stripe](#setting-up-stripe)
+  - [Setting Up Project](#setting-up-project)
+  - [Heroku Deployment](#heroku-deployment)
+
+- [Credits](#credits)
+  - [Code](#code)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgements](#acknowledgements)
+
+## Business model
+
 SnapShot is a Business to Client (B2C) business model site in which the owner of the site sells products directly to clents rather than to other businesses. An E-Commerce site such as SnapShot will then also advertise to clients directly in as many places as possible, including social media sites such as [Facebook](https://en-gb.facebook.com/) (Meta). Below are examples of a business page a company such as SnapShot could create for promoting their business:
 
 ![Facebook desktop page](static/assets/documentation/images/fb_desktop_mockup.png)
@@ -23,99 +59,62 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
 
 ![4 screen sizes image of the site](static/assets/documentation/images/4_sizes.PNG)
 
-## Contents 
-
-- [User Experience (UX)](#user-experience-ux)
-   * [User Stories](#user-stories) 
-      + [Current Features](#current-features)
-      + [Features to implement in the future](#future-features)
-   * [Structure](#structure)
-      + [File structure](#file-structure)
-      + [Models](#models)
-   * [Wireframes](#wireframes)
-   * [Colour Scheme](#colour-scheme)
-   * [Typography](#typography)
-   * [Imagery](#imagery)
-   * [Design Choices](#design-choices)
-- [Technologies](#technologies)
-   * [Languages used](#languages-used)
-   * [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
-
-- [Challenges](#challenges)
-
-- [Testing](#testing)
-   
-- [Deployment](#deployment)
-   * [Creation](#creation)
-   * [Forking](#forking)
-   * [Clone](#clone)
-   * [Setting up AWS](#setting-up-aws)
-   * [Setting Up Stripe](#setting-up-stripe)
-   * [Setting Up Project](#setting-up-project)
-   * [Heroku Deployment](#heroku-deployment)
-
-- [Credits](#credits)
-   * [Code](#code)
-   * [Content](#content)
-   * [Media](#media)
-   * [Acknowledgements](#acknowledgements)
-
 ## User Experience / Interaction (UX / UI)
 
-   ### User Stories
+### User Stories
 
-   - #### Unregistered Visitor
-     - As an unregistered user, I want to be able to: 
-        - View all products so that I can select items to purchase.
-        - View a selection of products by category so that I can narrow my search by type.
-        - See all a product's detail so that I can find the price and read the description of a product.
-        - Search for specific products so that I can find exactly what I am looking for.
-        - Filter by rating and price so that I can shop for the best items.
+- #### Unregistered Visitor
+  - As an unregistered user, I want to be able to: 
+    - View all products so that I can select items to purchase.
+    - View a selection of products by category so that I can narrow my search by type.
+    - See all a product's detail so that I can find the price and read the description of a product.
+    - Search for specific products so that I can find exactly what I am looking for.
+    - Filter by rating and price so that I can shop for the best items.
 
-   - #### First Time Visitor (in addition to above)
-     - As a first time user, I want to be able to:
-       - Navigate the site easily and intuitively.
-       - Find what I am looking for easily. 
-       - Keep track of my basket total so I do not overspend.
-       - Add and remove item's from my basket so I can make sure I have the correct items, and quantities.
-       - Checkout easily and be sent confirmation of my purchase to my email.
+- #### First Time Visitor (in addition to above)
+  - As a first time user, I want to be able to:
+    - Navigate the site easily and intuitively.
+    - Find what I am looking for easily. 
+    - Keep track of my basket total so I do not overspend.
+    - Add and remove item's from my basket so I can make sure I have the correct items, and quantities.
+    - Checkout easily and be sent confirmation of my purchase to my email.
 
-   - #### Registered Returning Visitor Goals
-     - As a registered user, I want to be able to:
-       - Save my checkout information so I can purchase items easier the next time I visit the site.
-       - Sign up to a news letter so that I can be told about special offers and savings.
-       - Update my information when it changes so that my items are aways delivered to the correct address.
-       - Recieve an email to verify my registration so that I can be sure I have an account.
-       - Change and recover my password so I do not have to create a new account if I forget it.
-       - Access a profile so that I can view my order history, confirmations, and payment information.
+- #### Registered Returning Visitor Goals
+  - As a registered user, I want to be able to:
+    - Save my checkout information so I can purchase items easier the next time I visit the site.
+    - Sign up to a news letter so that I can be told about special offers and savings.
+    - Update my information when it changes so that my items are aways delivered to the correct address.
+    - Recieve an email to verify my registration so that I can be sure I have an account.
+    - Change and recover my password so I do not have to create a new account if I forget it.
+    - Access a profile so that I can view my order history, confirmations, and payment information.
 
-   - #### Superuser goals
-     - As a superuser / admin, I want to be able to:
-       - Add, edit, and remove items from the site so that I can sell more products and remove the products that are not being sold to improve revenue.
+- #### Superuser goals
+  - As a superuser / admin, I want to be able to:
+    - Add, edit, and remove items from the site so that I can sell more products and remove the products that are not being sold to improve revenue.
 
 - A list of user stories used in production can be seen below:
 
 ![User Stories](static/assets/documentation/images/user-stories.PNG)
 
-   ### Current features 
+### Current features 
 
-     - Responsive design to work on all screens
-     - Accessibility
-     - Easy to navigate (Single use learning)
-     - Interactive elements
-     - Social Links
-     - Logged in / out status changes for a user depending on their current status.
-     - Able to search products by keywords.
-     - Able to view products using predefined filtes including price, rating, and category.
-     - 'Back to top' button.
-     - Logged in user can save an address for future purchases.
-     - A user profile so a logged in user can update their information as and when it changes.
-     - Admin / superuser has full CRUD control of the site.
-     - Confirmation emails for registration and purchase.
+- Responsive design to work on all screens
+- Accessibility
+- Easy to navigate (Single use learning)
+- Interactive elements
+- Social Links
+- Logged in / out status changes for a user depending on their current status.
+- Able to search products by keywords.
+- Able to view products using predefined filtes including price, rating, and category.
+- 'Back to top' button.
+- Logged in user can save an address for future purchases.
+- A user profile so a logged in user can update their information as and when it changes.
+- Admin / superuser has full CRUD control of the site.
+- Confirmation emails for registration and purchase.
 
-   ### Future features
+### Future features
 
-     - Logged in users will be able to rate products in their reviews, which will update the rating in the database. This will dynamically alter the products page when filtering by rating. Furthermore, it will allow more user interaction with the store and improve user experience.
+- Logged in users will be able to rate products in their reviews, which will update the rating in the database. This will dynamically alter the products page when filtering by rating. Furthermore, it will allow more user interaction with the store and improve user experience.
 
 ## Structure
 
@@ -256,10 +255,10 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
 
 ### Languages Used
 
--   HTML5
--   CSS3
--   JavaScript and jQuery
--   Python and Django
+- HTML5
+- CSS3
+- JavaScript and jQuery
+- Python and Django
 
 ### Frameworks, Libraries and Programs Used
 
@@ -268,7 +267,7 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
 - [Git](https://git-scm.com/)
 - [GitHub](https://github.com/)
 - [Gitpod](https://www.gitpod.io/)
-- [Am I responsive](https://amiresponsive.co.uk/)
+- [Am I responsive?](https://amiresponsive.co.uk/)
 - [Chrome devtools](https://developer.chrome.com/docs/devtools/)
 - [jQuery](https://jquery.com/)
 - [Heroku](https://dashboard.heroku.com/apps)
@@ -291,63 +290,60 @@ Testing and results can be found [here](TESTING.md)
 
 ## Deployment
 
- - ### Creation 
-   - This project was created using Code Institute's Full Gitpod Template following these steps: 
+- ### Creation 
+  - This project was created using Code Institute's Full Gitpod Template following these steps: 
+      1. Sign into a Github profile.
+      2. Click "New" next to recent repositories.
+      3. Select ```Code-Institute-Org/gitpod-full-template``` in the templates dropdown.
+      4. Give it a name and a description (optional).
+      5. Set the repo to public.
+      6. Click "Create repository".
 
-     1. Sign into a Github profile.
-     2. Click "New" next to recent repositories.
-     3. Select ```Code-Institute-Org/gitpod-full-template``` in the templates dropdown.
-     4. Give it a name and a description (optional).
-     5. Set the repo to public.
-     6. Click "Create repository".
+  - Once inside the repository, click the green "Gitpod" button to open the IDE.
 
-   - Once inside the repository, click the green "Gitpod" button to open the IDE.
-
-   - ### Forking
-     - To fork this project:
-
+  - ### Forking
+    - To fork this project:
       1. Navigate the repository on Github.
       2. Click "Fork" in the top right of the screen.
       3. (Optional) Re-name the repository and give it a description.
       4. Click "Create fork".
-   
-   - Once inside the repository, click the green "Gitpod" button to open the IDE.
+  
+  - Once inside the repository, click the green "Gitpod" button to open the IDE.
 
-  - ### Clone
-    - Note: in your command line, make sure you are located within the directory that you want the project to be cloned into.
-     - To clone this project:
-
+- ### Clone
+  - Note: in your command line, make sure you are located within the directory that you want the project to be cloned into.
+    - To clone this project:
       1. Navigate to the project repository.
       2. Click the "Code" dropdown menu.
       3. Select either HTTPS or SSH depending on your preference.
       4. Copy the link generated for you.
       5. Open your IDE of choice.
       6. In the command line, type:
-         - ``` git clone <your copied link> ```
+          - ``` git clone <your copied link> ```
       7. Hit enter and the repository files will be cloned into your IDE.
 
 - ### Setting Up Project
   - Once you have the project open in your IDE, you will need to download some dependencies to make sure the project works as expected. 
 
-  1. Firstly, install Django 3.2 with:
-    - ``` pip3 install Django==3.2 ```
-  
-  2. Next, ``` pip3 install ``` the following dependencies:
-    - boto
-    - botocore
-    - dj-database-url
-    - Django
-    - django-allauth
-    - django-countries
-    - django-storages
-    - gunicorn
-    - Pillow
-    - psycopg2-binary
-    - stripe
-  
-  3. In the command line, run ``` python3 manage.py makemigrations ``` followed by ``` python3 manage.py migrate ``` to migrate all the models.
+    1. Firstly, install Django 3.2 with:
+      - ``` pip3 install Django==3.2 ```
+    
+    2. Next, ``` pip3 install ``` the following dependencies:
+      - boto
+      - botocore
+      - dj-database-url
+      - Django
+      - django-allauth
+      - django-countries
+      - django-storages
+      - gunicorn
+      - Pillow
+      - psycopg2-binary
+      - stripe
+    
+    3. In the command line, run ``` python3 manage.py makemigrations ``` followed by ``` python3 manage.py migrate ``` to migrate all the models.
 
-  4. In the command line, run ``` python3 manage.py runserver ``` to run the project in the browser. 
+    4. In the command line, run ``` python3 manage.py runserver ``` to run the project in the browser. 
  
 - ### Setting up AWS
 
