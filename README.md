@@ -30,6 +30,8 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
       + [Current Features](#current-features)
       + [Features to implement in the future](#future-features)
    * [Structure](#structure)
+      + [File structure](#file-structure)
+      + [Models](#models)
    * [Wireframes](#wireframes)
    * [Colour Scheme](#colour-scheme)
    * [Typography](#typography)
@@ -118,7 +120,45 @@ SnapShot is a Business to Client (B2C) business model site in which the owner of
 
      - Logged in users will be able to rate products in their reviews, which will update the rating in the database. This will dynamically alter the products page when filtering by rating. Furthermore, it will allow more user interaction with the store and improve user experience.
 
-### Structure
+## Structure
+
+### File structure
+
+- The over-arching file structure follows the main Django conventions. The Django documentation doesn't have much to say on file structure, however in my research for this project there appeared to be two main types available for the location of templates:
+  - App level: this is the structure used in the Boutque Ado project and many smaller projects found online.
+  - Project level: recommended for use in larger projects.
+
+- As this project included many apps and many more templates, it made sense for the project to adopt the project-level structure for storing the templates. Within the template folder each app has its own respective folder containing the templates that app requires. A diagram of this project's file structure is shown below:
+
+```
+|--snap--shot
+|  |--snap_shot
+|    |--__init__.py
+|    |--asgi.py
+|    |--settings.py
+|    |--urls.py
+|    |--views.py
+|    |--wsgi.py
+|  |--app
+|    |--__init__.py
+|    |--admin.py
+|    |--apps.py
+|    |--forms.py
+|    |--models.py
+|    |--urls.py
+|    |--views.py
+|  |--templates
+|    |--app
+|      |--index.html
+|  |--static
+|    |--css
+|      |--index.css
+|    |--js
+|      |--index.js
+|  |--media
+```
+
+### Models
 
 #### Testimonies 
 
