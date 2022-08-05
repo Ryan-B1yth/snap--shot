@@ -128,5 +128,330 @@
         "image": "doorway-to-hell.PNG",
         "sizes": "False"
       }
+    },
+    {
+      "pk": 11,
+      "model": "products.product",
+      "fields": {
+        "name": "Eyes",
+        "description": "Always watching. This one denotes a red and green theme and is a little spooky.",
+        "price": 15.00,
+        "category": 2,
+        "rating": 3.0,
+        "image": "eyes.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 12,
+      "model": "products.product",
+      "fields": {
+        "name": "He dropped his banana",
+        "description": "A funny little black and white picture of a man who seems to have dropped his banana and a single grape. The silhouette is missing hands and appears to have been shot multiple times in the legs. Weird.",
+        "price": 45.67,
+        "category": 1,
+        "rating": 3.1,
+        "image": "he-dropped-his-banana.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 13,
+      "model": "products.product",
+      "fields": {
+        "name": "Here there be monsters",
+        "description": "Another door aestetic. Less inviting but looks somewhat like the famous door from a certain film franchise. Blue tones and a dark background to contrast the known, and the unknown.",
+        "price": 27.65,
+        "category": 1,
+        "rating": 4.8,
+        "image": "here-there-be-monsters.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 14,
+      "model": "products.product",
+      "fields": {
+        "name": "Infinity",
+        "description": "Spirals of infinity, colliding in the middle in a burst of light. Perhaps waves of somekind, who's to say. Slightly off black and white so not completely devoid of life.",
+        "price": 20.00,
+        "category": 2,
+        "rating": 1.8,
+        "image": "infinity.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 15,
+      "model": "products.product",
+      "fields": {
+        "name": "Just step through",
+        "description": "Not all doors should be walked through. This one is enticing however. A dark, spooky, scary archway is before you. Is that somthing on the other side?",
+        "price": 30.00,
+        "category": 1,
+        "rating": 3.9,
+        "image": "just-step-through.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 16,
+      "model": "products.product",
+      "fields": {
+        "name": "Lakeside",
+        "description": "Bob Ross style landscape of a lovely lakeside on a sunny day. Walm and calm tones in this one.",
+        "price": 12.35,
+        "category": 1,
+        "rating": 3.2,
+        "image": "lakeside.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 17,
+      "model": "products.product",
+      "fields": {
+        "name": "Mirage",
+        "description": "Digital rendition of the mirage effect. Strange futuristic red and green colors here. Waves on the ground with an island in the center - and a pyramid.",
+        "price": 11.11,
+        "category": 2,
+        "rating": 1.0,
+        "image": "mirage.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 18,
+      "model": "products.product",
+      "fields": {
+        "name": "Morning fog",
+        "description": "Another Bob Ross style water-front painting. Very calm blues in both the water and the sky with the look of an early morning fog or mist rolling in over the surface.",
+        "price": 23.40,
+        "category": 1,
+        "rating": 4.3,
+        "image": "morning-fog.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 19,
+      "model": "products.product",
+      "fields": {
+        "name": "Path to enlightenment",
+        "description": "A carved, sandstone floor leads you to an open door, pouring light in. This is an ancient place, but what lies beyond is older than time.",
+        "price": 29.99,
+        "category": 1,
+        "rating": 5.0,
+        "image": "path-to-enlightenment.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 20,
+      "model": "products.product",
+      "fields": {
+        "name": "Pondering existence",
+        "description": "This animal looks out beyond the canvas. It gazes on, and thinks. The browns of its fur give it an ancient look. Perhaps he's been here for some time.",
+        "price": 26.00,
+        "category": 1,
+        "rating": 4.3,
+        "image": "pondering-existence.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 21,
+      "model": "products.product",
+      "fields": {
+        "name": "Portal to the void",
+        "description": "If creation came before, this is the end. A black hole into the abyss, devoid of time, end of the road. Dark blues and purples lead to the portal. Is there anything on the other side? Only one way to find out.",
+        "price": 68.89,
+        "category": 2,
+        "rating": 5.0,
+        "image": "portal-to-the-void.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 22,
+      "model": "products.product",
+      "fields": {
+        "name": "Proud and noble",
+        "description": "This creature is a proud one. Look how she stands. A true queen. Fur freshly straightened, but could never lose that natural wave.",
+        "price": 42.50,
+        "category": 1,
+        "rating": 4.6,
+        "image": "proud-and-noble.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 23,
+      "model": "products.product",
+      "fields": {
+        "name": "Puppeteering",
+        "description": "One holds the other. They share the same design yet they are not the same. Does one control the other. Or do they both control each other.",
+        "price": 32.10,
+        "category": 1,
+        "rating": 3.7,
+        "image": "puppeteering.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 24,
+      "model": "products.product",
+      "fields": {
+        "name": "Reflections",
+        "description": "Simple tres reflected in the water. Natural blues and greens create the effect of still water complimenting the forest.",
+        "price": 10.00,
+        "category": 2,
+        "rating": 1.4,
+        "image": "reflections.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 25,
+      "model": "products.product",
+      "fields": {
+        "name": "Sanity",
+        "description": "Its a fragile thing. The constant feeling of being in spotlight and grey your world and make you feel like you're losing your mind.",
+        "price": 24.35,
+        "category": 2,
+        "rating": 4.0,
+        "image": "sanity.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 26,
+      "model": "products.product",
+      "fields": {
+        "name": "Self thought",
+        "description": "Thinking about your thinking can really help you change your thinking. Too much will make you selfish. Sometimes our inner world is more colorful than the one outside.",
+        "price": 43.69,
+        "category": 2,
+        "rating": 3.1,
+        "image": "self-thought.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 27,
+      "model": "products.product",
+      "fields": {
+        "name": "Strike a pose",
+        "description": "Vogue",
+        "price": 15.50,
+        "category": 1,
+        "rating": 2.6,
+        "image": "strike-a-pose.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 28,
+      "model": "products.product",
+      "fields": {
+        "name": "The sands of time",
+        "description": "The sands of time are often depicted as existing in the hourglass. But that's not true. They flow amogst all things, and exist as their own infinity. This aesthetic works well with any existing decoration you may have.",
+        "price": 23.23,
+        "category": 2,
+        "rating": 2.9,
+        "image": "the-sands-of-time.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 29,
+      "model": "products.product",
+      "fields": {
+        "name": "The void",
+        "description": "Through the door leads you to the thing itself. Dark and wavey, nothing here but shape. Abstract design, it almost looks like the prisoners cinema.",
+        "price": 14.50,
+        "category": 2,
+        "rating": 3.1,
+        "image": "the-void.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 30,
+      "model": "products.product",
+      "fields": {
+        "name": "Thick skulled",
+        "description": "This ones a little scary. Some shapeless creature with only a skull set in a dark room. Maybe don't offend this one.",
+        "price": 25.00,
+        "category": 1,
+        "rating": 4.1,
+        "image": "thick-skulled.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 31,
+      "model": "products.product",
+      "fields": {
+        "name": "Think about it",
+        "description": "An incredibly accurate despiction of an X-Ray, taken straight from the hospital. With permission of course.",
+        "price": 19.99,
+        "category": 2,
+        "rating": 2.5,
+        "image": "think-about-it.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 32,
+      "model": "products.product",
+      "fields": {
+        "name": "Thoughts escape her",
+        "description": "You know that feeling when you lose your train of thought?",
+        "price": 15.00,
+        "category": 1,
+        "rating": 3.0,
+        "image": "thoughts-escape-her.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 33,
+      "model": "products.product",
+      "fields": {
+        "name": "Unaware",
+        "description": "This one reminds me of those old adverts for road safety. Anyway, a fluffy hedgehog doesn't quite see you. A pop of color to fit into anyones aesthetic.",
+        "price": 22.22,
+        "category": 1,
+        "rating": 4.3,
+        "image": "unaware.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 34,
+      "model": "products.product",
+      "fields": {
+        "name": "What can you see?",
+        "description": "Oh look, someone'a coming over. Who do you think it is? It's a dark shadow for sure. A little spooky but I'm sure it'll be fine.",
+        "price": 33.33,
+        "category": 2,
+        "rating": 3.9,
+        "image": "what-can-you-see.PNG",
+        "sizes": "False"
+      }
+    },
+    {
+      "pk": 35,
+      "model": "products.product",
+      "fields": {
+        "name": "What's on the other side?",
+        "description": "A door that appears out of no where can only really be a good thing. This one is even offering you a helping hand. Let's get out of this desert, yeah? Take it's hand.",
+        "price": 35.50,
+        "category": 2,
+        "rating": 4.3,
+        "image": "whats-on-the-other-side.PNG",
+        "sizes": "False"
+      }
     }
 ]

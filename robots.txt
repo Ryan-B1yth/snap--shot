@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://snap-shot-store.herokuapp.com/sitemap.xml
